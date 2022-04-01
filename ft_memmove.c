@@ -6,7 +6,7 @@
 /*   By: maolivei <maolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 17:39:59 by maolivei          #+#    #+#             */
-/*   Updated: 2022/03/31 22:37:52 by maolivei         ###   ########.fr       */
+/*   Updated: 2022/04/01 00:25:00 by maolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	char	*start_dest;
 	char	*start_src;
 
-	start_dest = dest;
-	start_src = src;
+	start_dest = (char *) dest;
+	start_src = (char *) src;
 	if (dest > src)
 	{
 		while (n-- > 0)
