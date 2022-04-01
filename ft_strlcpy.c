@@ -6,7 +6,7 @@
 /*   By: maolivei <maolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 22:55:56 by maolivei          #+#    #+#             */
-/*   Updated: 2022/03/31 23:10:17 by maolivei         ###   ########.fr       */
+/*   Updated: 2022/04/01 00:24:45 by maolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	int	i;
-	int	src_len;
+	size_t	i;
+	size_t	src_len;
 
 	i = 0;
 	src_len = ft_strlen(src);
