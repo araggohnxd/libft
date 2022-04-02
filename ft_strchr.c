@@ -6,7 +6,7 @@
 /*   By: maolivei <maolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/01 17:49:28 by maolivei          #+#    #+#             */
-/*   Updated: 2022/04/01 18:11:29 by maolivei         ###   ########.fr       */
+/*   Updated: 2022/04/02 14:56:32 by maolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,7 @@ char	*ft_strchr(const char *s, int c)
 			return ((char *) s);
 		s++;
 	}
+	if (*s == c)
+		return ((char *) s);
 	return (NULL);
 }
