@@ -6,12 +6,11 @@
 /*   By: maolivei <maolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/04 13:08:22 by maolivei          #+#    #+#             */
-/*   Updated: 2022/04/05 11:04:50 by maolivei         ###   ########.fr       */
+/*   Updated: 2022/04/05 11:29:50 by maolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 static void	ft_fill_strings(const char *s, char c, char **split, size_t size)
 {
