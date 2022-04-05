@@ -6,7 +6,7 @@
 /*   By: maolivei <maolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/04 13:08:22 by maolivei          #+#    #+#             */
-/*   Updated: 2022/04/05 11:29:50 by maolivei         ###   ########.fr       */
+/*   Updated: 2022/04/05 14:22:17 by maolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ static void	ft_malloc_strings(const char *s, char c, char **split, size_t size)
 			i++;
 		while (s[i] && s[i++] != c)
 			str_size++;
-		split[j] = malloc(sizeof(char) * (str_size) + 1);
+		split[j] = malloc(sizeof(char) * (str_size + 1));
 		if (split[j] == NULL)
 		{
 			split = NULL;
@@ -96,6 +96,8 @@ char	**ft_split(char const *s, char c)
 	if (split == NULL)
 		return (NULL);
 	ft_malloc_strings(s, c, split, str_count);
+	if (split == NULL)
+		return (NULL);
 	ft_fill_strings(s, c, split, str_count);
 	return (split);
 }
