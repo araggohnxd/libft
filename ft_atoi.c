@@ -6,7 +6,7 @@
 /*   By: maolivei <maolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/03 23:17:10 by maolivei          #+#    #+#             */
-/*   Updated: 2022/04/03 23:39:34 by maolivei         ###   ########.fr       */
+/*   Updated: 2022/04/05 22:06:31 by maolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	ft_atoi(const char *nptr)
 	min_count = 0;
 	while ((nptr[i] >= 9 && nptr[i] <= 13) || nptr[i] == 32)
 		i++;
-	while ((nptr[i] == '-' || nptr[i] == '+'))
+	if ((nptr[i] == '-' || nptr[i] == '+'))
 	{
 		if (nptr[i] == '-')
 			min_count++;
