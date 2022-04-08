@@ -6,7 +6,7 @@
 /*   By: maolivei <maolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/04 11:23:25 by maolivei          #+#    #+#             */
-/*   Updated: 2022/04/04 12:17:07 by maolivei         ###   ########.fr       */
+/*   Updated: 2022/04/08 14:50:51 by maolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,11 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	substr = malloc(malloc_size + 1);
 	if (substr == NULL)
 		return (NULL);
+	if (malloc_size == 0)
+	{
+		substr[0] = '\0';
+		return (substr);
+	}
 	ft_strlcpy(substr, s + start, malloc_size + 1);
 	return (substr);
 }

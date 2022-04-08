@@ -6,7 +6,7 @@
 /*   By: maolivei <maolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/04 13:08:22 by maolivei          #+#    #+#             */
-/*   Updated: 2022/04/05 14:22:17 by maolivei         ###   ########.fr       */
+/*   Updated: 2022/04/08 13:54:58 by maolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,6 @@ static void	ft_malloc_strings(const char *s, char c, char **split, size_t size)
 		}
 		j++;
 	}
-	split[j] = malloc(sizeof(char));
 }
 
 static int	ft_count_strings(const char *s, char c)

@@ -6,7 +6,7 @@
 /*   By: maolivei <maolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 20:11:15 by maolivei          #+#    #+#             */
-/*   Updated: 2022/04/07 20:42:12 by maolivei         ###   ########.fr       */
+/*   Updated: 2022/04/08 16:32:24 by maolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ void	ft_lstclear(t_list **lst, void (*del)(void*))
 	while (aux_node)
 	{
 		aux_node = aux_node->next;
-		del(*lst);
+		ft_lstdelone(*lst, del);
 		*lst = aux_node;
 	}
-	lst = NULL;
+	*lst = NULL;
 }

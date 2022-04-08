@@ -6,7 +6,7 @@
 /*   By: maolivei <maolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/03 23:42:53 by maolivei          #+#    #+#             */
-/*   Updated: 2022/04/04 00:03:00 by maolivei         ###   ########.fr       */
+/*   Updated: 2022/04/08 13:32:51 by maolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,14 @@
 void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*ptr;
+	size_t	total;
 
-	ptr = NULL;
-	if (nmemb * size > INT_MAX)
-		return (ptr);
+	total = nmemb * size;
+	if (nmemb != 0 && total / nmemb != size)
+		return (NULL);
 	ptr = malloc(nmemb * size);
-	if (ptr == NULL)
-		return (ptr);
+	if (!ptr)
+		return (NULL);
 	ft_bzero(ptr, nmemb * size);
 	return (ptr);
 }
