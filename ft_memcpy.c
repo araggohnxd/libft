@@ -6,7 +6,7 @@
 /*   By: maolivei <maolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 16:55:16 by maolivei          #+#    #+#             */
-/*   Updated: 2022/04/01 00:25:09 by maolivei         ###   ########.fr       */
+/*   Updated: 2022/04/08 11:58:12 by maolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	char	*start_dest;
 	char	*start_src;
 
+	if (!dest && !src)
+		return (dest);
 	start_dest = (char *) dest;
 	start_src = (char *) src;
 	while (n-- > 0)
