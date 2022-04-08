@@ -6,7 +6,7 @@
 /*   By: maolivei <maolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/04 13:08:22 by maolivei          #+#    #+#             */
-/*   Updated: 2022/04/08 13:54:58 by maolivei         ###   ########.fr       */
+/*   Updated: 2022/04/08 17:14:29 by maolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,6 +90,8 @@ char	**ft_split(char const *s, char c)
 	char	**split;
 	size_t	str_count;
 
+	if (!s)
+		return (NULL);
 	str_count = ft_count_strings(s, c);
 	split = malloc(sizeof(char *) * (str_count + 1));
 	if (split == NULL)
