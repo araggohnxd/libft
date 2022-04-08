@@ -6,7 +6,7 @@
 /*   By: maolivei <maolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/01 18:12:06 by maolivei          #+#    #+#             */
-/*   Updated: 2022/04/02 15:00:20 by maolivei         ###   ########.fr       */
+/*   Updated: 2022/04/08 14:22:17 by maolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@ char	*ft_strrchr(const char *s, int c)
 	last = NULL;
 	while (*s)
 	{
-		if (*s == c)
+		if (*s == (unsigned char) c)
 			last = (char *) s;
 		s++;
 	}
-	if (*s == c)
+	if (*s == (unsigned char) c)
 		last = (char *) s;
 	if (last == NULL)
 		return (NULL);
