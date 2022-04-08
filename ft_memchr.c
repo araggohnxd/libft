@@ -6,7 +6,7 @@
 /*   By: maolivei <maolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/01 19:15:24 by maolivei          #+#    #+#             */
-/*   Updated: 2022/04/02 15:17:54 by maolivei         ###   ########.fr       */
+/*   Updated: 2022/04/08 11:58:19 by maolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,14 @@
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	char	*string;
+	unsigned char	*string;
+	unsigned char	substr;
 
-	string = (char *) s;
-	while (*string && n--)
+	string = (unsigned char *) s;
+	substr = (unsigned char) c;
+	while (n--)
 	{
-		if (*string == c)
+		if (*string == substr)
 			return (string);
 		string++;
 	}
