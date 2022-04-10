@@ -6,9 +6,11 @@
 /*   By: maolivei <maolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 15:32:20 by maolivei          #+#    #+#             */
-/*   Updated: 2022/03/31 15:34:02 by maolivei         ###   ########.fr       */
+/*   Updated: 2022/04/10 02:41:50 by maolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_isascii(int c)
 {

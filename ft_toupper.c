@@ -6,9 +6,11 @@
 /*   By: maolivei <maolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/01 17:37:45 by maolivei          #+#    #+#             */
-/*   Updated: 2022/04/01 17:45:39 by maolivei         ###   ########.fr       */
+/*   Updated: 2022/04/10 02:42:02 by maolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_toupper(int c)
 {

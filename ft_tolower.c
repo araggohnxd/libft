@@ -6,9 +6,11 @@
 /*   By: maolivei <maolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/01 17:46:59 by maolivei          #+#    #+#             */
-/*   Updated: 2022/04/01 17:48:16 by maolivei         ###   ########.fr       */
+/*   Updated: 2022/04/10 02:42:00 by maolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_tolower(int c)
 {

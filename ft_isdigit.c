@@ -6,9 +6,11 @@
 /*   By: maolivei <maolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 14:23:54 by maolivei          #+#    #+#             */
-/*   Updated: 2022/03/31 14:31:09 by maolivei         ###   ########.fr       */
+/*   Updated: 2022/04/10 02:41:52 by maolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_isdigit(int c)
 {

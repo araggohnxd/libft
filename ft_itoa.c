@@ -6,12 +6,20 @@
 /*   By: maolivei <maolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 11:29:36 by maolivei          #+#    #+#             */
-/*   Updated: 2022/04/05 14:32:01 by maolivei         ###   ########.fr       */
+/*   Updated: 2022/04/10 02:08:29 by maolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * @brief Fill an array allocated with malloc() with the given
+ * number received at ft_itoa().
+ * @param num Number to fill the array with.
+ * @param arr Pointer to the array to fill.
+ * @param size Size of the number used to fill the array.
+ * @return Nothing.
+**/
 static void	ft_fill_array(long num, char *arr, size_t size)
 {
 	if (num < 0)

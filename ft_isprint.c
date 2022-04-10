@@ -6,9 +6,11 @@
 /*   By: maolivei <maolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 15:35:47 by maolivei          #+#    #+#             */
-/*   Updated: 2022/03/31 15:37:21 by maolivei         ###   ########.fr       */
+/*   Updated: 2022/04/10 02:41:55 by maolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_isprint(int c)
 {

@@ -6,7 +6,7 @@
 /*   By: maolivei <maolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 14:43:19 by maolivei          #+#    #+#             */
-/*   Updated: 2022/04/08 22:20:52 by maolivei         ###   ########.fr       */
+/*   Updated: 2022/04/10 02:43:11 by maolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ int		ft_isprint(int c);
 /**
  * @brief Transform a lowercase character into an uppercase character.
  * @param c Character to be transformed.
- * @return The tranformed character, or itself if it is already
+ * @return The transformed character, or itself if it is already
  * uppercase.
 **/
 int		ft_toupper(int c);
@@ -64,7 +64,7 @@ int		ft_toupper(int c);
 /**
  * @brief Transform an uppercase character into a lowercase character.
  * @param c Character to be transformed.
- * @return The tranformed character, or itself if it is already
+ * @return The transformed character, or itself if it is already
  * lowercase.
 **/
 int		ft_tolower(int c);
@@ -323,7 +323,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*));
  * @brief Outputs the character c to the given file descriptor.
  * @param c Character to output.
  * @param fd File descriptor to write to.
- * @return Nothing. Nothing.
+ * @return Nothing.
 **/
 void	ft_putchar_fd(char c, int fd);
 
@@ -370,7 +370,7 @@ typedef struct s_list
 int		ft_lstsize(t_list *lst);
 
 /**
- * @brief Adds the node new at the beginning of the list.
+ * @brief Adds the node new at the beginning of the list lst.
  * @param lst The address of a pointer to the first node of a list.
  * @param new Node to be added to the list.
  * @return Nothing.
@@ -378,7 +378,7 @@ int		ft_lstsize(t_list *lst);
 void	ft_lstadd_front(t_list **lst, t_list *new);
 
 /**
- * @brief Adds the node new at the end of the list.
+ * @brief Adds the node new at the end of the list lst.
  * @param lst The address of a pointer to the first node of a list.
  * @param new Node to be added to the list.
  * @return Nothing.
