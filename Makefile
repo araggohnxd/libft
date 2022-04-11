@@ -57,7 +57,7 @@ ${NAME}:		${OBJS} ${HEAD} Makefile
 				@ar -rcs ${NAME} ${OBJS}
 				@echo [SUCCESS] Library creation done!
 
-bonus:			${BONUS_OBJS} ${HEAD} Makefile
+bonus:			${NAME} ${BONUS_OBJS} ${HEAD} Makefile
 				@ar -rcs ${NAME} ${BONUS_OBJS}
 				@echo [SUCCESS] Bonus library creation done!
 
