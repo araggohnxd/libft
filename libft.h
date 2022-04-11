@@ -6,7 +6,7 @@
 /*   By: maolivei <maolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 14:43:19 by maolivei          #+#    #+#             */
-/*   Updated: 2022/04/10 02:43:11 by maolivei         ###   ########.fr       */
+/*   Updated: 2022/04/11 10:00:24 by maolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -154,6 +154,7 @@ char	*ft_strrchr(const char *s, int c);
  * pointed to by s with the constant byte c.
  * @param s Memory area to fill.
  * @param c Byte to fill with.
+ * @param n Number of bytes to fill.
  * @return A pointer to the memory area s.
 **/
 void	*ft_memset(void *s, int c, size_t n);
