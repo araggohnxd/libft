@@ -53,21 +53,17 @@ RM =	rm -f
 
 all:			${NAME}
 
-${NAME}:		${OBJS}
+${NAME}:		${OBJS} ${HEAD} Makefile
 				@ar -rcs ${NAME} ${OBJS}
 				@echo [SUCCESS] Library creation done!
 
-${OBJS}:		${SRCS} ${HEAD} Makefile
-				@${CC} -I . -c ${SRCS}
-				@echo [SUCCESS] Objects creation done!
-
-bonus:			${BONUS_OBJS}
+bonus:			${BONUS_OBJS} ${HEAD} Makefile
 				@ar -rcs ${NAME} ${BONUS_OBJS}
-				@echo [BONUS] Bonus library creation done!
+				@echo [SUCCESS] Bonus library creation done!
 
-${BONUS_OBJS}:	${BONUS_SRCS} ${HEAD} Makefile
-				@${CC} -I . -c ${BONUS_SRCS}
-				@echo [BONUS] Bonus objects creation done!
+.c.o:
+				@${CC} -I . -c $< -o $@
+				@echo [SUCCESS] $@ creation done!
 
 clean:
 				@${RM} ${OBJS} ${BONUS_OBJS}
@@ -75,7 +71,7 @@ clean:
 
 fclean:			clean
 				@${RM} ${NAME}
-				@echo [SUCCESS] Library removal done!
+				@echo [SUCCESS] Bonus objects removal done!
 
 re:				fclean all
 
