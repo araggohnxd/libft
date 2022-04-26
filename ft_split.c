@@ -29,7 +29,6 @@ static void	ft_fill_strings(const char *s, char c, char **split, size_t size)
 
 	i = 0;
 	j = 0;
-	k = 0;
 	while (s[i] && j < size)
 	{
 		k = 0;
@@ -40,7 +39,6 @@ static void	ft_fill_strings(const char *s, char c, char **split, size_t size)
 		split[j][k] = '\0';
 		j++;
 	}
-	k = 0;
 	split[j] = NULL;
 }
 
@@ -106,7 +104,7 @@ static int	ft_count_words(const char *s, char c)
 			i++;
 		}
 		if (j > 0)
-			str_count += j / j;
+			str_count++;
 	}
 	return (str_count);
 }
