@@ -6,7 +6,7 @@
 /*   By: maolivei <maolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 14:43:19 by maolivei          #+#    #+#             */
-/*   Updated: 2022/05/09 11:56:57 by maolivei         ###   ########.fr       */
+/*   Updated: 2022/05/09 16:09:01 by maolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,36 @@
 // External libraries
 # include <stdlib.h>
 # include <unistd.h>
+# include <stdarg.h>
 
+// macros and enumerators
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 42
 # endif
 
 # define MAX_FD_VALUE 1024
+# define HEX_BASE_LOWER "0123456789abcdef"
+# define HEX_BASE_UPPER "0123456789ABCDEF"
+
+enum e_bool {
+	FALSE,
+	TRUE
+};
+
+enum e_types {
+	INT = 2,
+	CHAR,
+	STR,
+	PTR,
+	UINT,
+	HEX_L,
+	HEX_U,
+	PERCENT
+};
+
+// type definitions
+typedef unsigned int		t_uint;
+typedef unsigned long		t_ulong;
 
 /* The basic structure of a linked list node. */
 typedef struct s_list
@@ -475,5 +499,27 @@ char	*ft_get_next_line(int fd);
 * as it's length).
 */
 size_t	ft_newlinecpy(char *dst, const char *src, size_t index);
+
+/**
+* @brief Converts the decimal base integer n
+* to a string representation of the given number
+* in the base received as parameter.
+* Memory for the new string is obtained with malloc(),
+* and can be freed with free().
+* @param n Decimal to convert.
+* @param base Base to convert to.
+* @return A pointer to the created string containing the number.
+*/
+char	*ft_itoa_base(t_ulong n, char *base);
+
+int		ft_printf(const char *format, ...);
+int		ft_handler_character(char character);
+int		ft_handler_decimal(int decimal);
+int		ft_handler_hex_lower(t_uint num);
+int		ft_handler_hex_upper(t_uint num);
+int		ft_handler_percent(void);
+int		ft_handler_pointer(t_ulong pointer_size);
+int		ft_handler_string(char *string);
+int		ft_handler_unsigned(t_uint uint);
 
 #endif
