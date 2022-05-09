@@ -1,6 +1,7 @@
 a.out
 .vscode
 .normignore
-todo
-libft-war-machine
-tests
+todo/
+libft-war-machine/
+tests/
+objects/
