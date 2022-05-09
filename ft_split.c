@@ -59,7 +59,6 @@ static void	ft_malloc_strings(const char *s, char c, char **split, size_t size)
 
 	i = 0;
 	j = 0;
-	str_size = 0;
 	while (s[i] && j < size)
 	{
 		str_size = 0;
