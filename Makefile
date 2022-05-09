@@ -31,7 +31,7 @@ bonus:				${NAME} ${BONUS_OBJS} ${HEAD} Makefile
 					@ar -rcs ${NAME} ${BONUS_OBJS}
 					@echo [SUCCESS] Bonus library creation done!
 
-${OBJS_PATH}/%.o:	%.c
+${OBJS_PATH}/%.o:	%.c | ${OBJS_PATH}
 					@${CC} -I . -c $< -o $@
 					@echo [SUCCESS] ${@:objects/%=%} object created!
 
