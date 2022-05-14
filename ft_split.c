@@ -6,7 +6,7 @@
 /*   By: maolivei <maolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/04 13:08:22 by maolivei          #+#    #+#             */
-/*   Updated: 2022/05/14 18:42:36 by maolivei         ###   ########.fr       */
+/*   Updated: 2022/05/14 18:47:40 by maolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ static char	**ft_fill_split(char **split, const char *s, char c, int words)
 	int		index;
 
 	start = 0;
-	end = 0;
 	index = 0;
 	while (index < words)
 	{
