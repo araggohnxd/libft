@@ -6,7 +6,7 @@
 /*   By: maolivei <maolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/04 00:05:00 by maolivei          #+#    #+#             */
-/*   Updated: 2022/04/04 00:18:48 by maolivei         ###   ########.fr       */
+/*   Updated: 2022/06/03 17:49:54 by maolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,12 @@
 
 char	*ft_strdup(const char *s)
 {
-	size_t	i;
-	char	*dup;
+	const size_t	length = ft_strlen(s) + 1;
+	char			*dup;
 
-	i = 0;
-	dup = malloc(ft_strlen(s) + 1);
-	if (dup == NULL)
+	dup = (char *) malloc(sizeof(char) * length);
+	if (!dup)
 		return (NULL);
-	while (s[i])
-	{
-		dup[i] = s[i];
-		i++;
-	}
-	dup[i] = '\0';
+	ft_memcpy(dup, s, length);
 	return (dup);
 }

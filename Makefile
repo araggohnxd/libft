@@ -1,4 +1,5 @@
 NAME =				libft.a
+SO =				${NAME:.a=.so}
 
 SRCS =				ft_atoi.c ft_calloc.c ft_bzero.c ft_isalnum.c \
 					ft_isalpha.c ft_isascii.c ft_isdigit.c ft_isprint.c \
@@ -14,7 +15,8 @@ SRCS =				ft_atoi.c ft_calloc.c ft_bzero.c ft_isalnum.c \
 					ft_handler_percent.c ft_handler_hex_lower.c \
 					ft_handler_hex_upper.c ft_handler_pointer.c \
 					ft_handler_string.c ft_handler_unsigned.c \
-					ft_strjoin_free.c ft_free_split.c
+					ft_strjoin_free.c ft_free_split.c ft_isspace.c \
+					ft_strnlen.c ft_memfree.c
 OBJ_FILES =			${SRCS:.c=.o}
 OBJS =				${addprefix ${OBJS_PATH}/, ${OBJ_FILES}}
 
@@ -27,7 +29,7 @@ BONUS_OBJS =		${addprefix ${OBJS_PATH}/, ${BONUS_OBJ_FILES}}
 OBJS_PATH =			objects
 
 HEAD =				libft.h
-CC =				cc -Wall -Wextra -Werror
+CC =				cc -g3 -Wall -Wextra -Werror
 RM =				rm -rf
 
 all:				${NAME}
@@ -53,9 +55,13 @@ clean:
 					@echo [SUCCESS] Objects removal done!
 
 fclean:				clean
-					@${RM} ${NAME}
+					@${RM} ${NAME} ${SO}
 					@echo [SUCCESS] Library removal done!
 
 re:					fclean all
 
-.PHONY:				all clean fclean re bonus
+so:
+					${CC} -nostartfiles -fPIC  ${SRCS} ${BONUS_SRCS}
+					gcc -nostartfiles -shared -o libft.so ${OBJS} ${BONUS_OBJS}
+
+.PHONY:				all clean fclean re bonus so

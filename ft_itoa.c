@@ -6,7 +6,7 @@
 /*   By: maolivei <maolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 11:29:36 by maolivei          #+#    #+#             */
-/*   Updated: 2022/04/10 02:08:29 by maolivei         ###   ########.fr       */
+/*   Updated: 2022/06/03 12:30:51 by maolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,26 +39,25 @@ char	*ft_itoa(int n)
 {
 	char		*arr;
 	long		num;
-	int			is_negative;
+	int			is_neg;
 	size_t		int_size;
 
-	int_size = 1;
-	is_negative = 0;
-	num = n;
+	is_neg = 0;
 	if (n < 0)
-		is_negative = 1;
+		is_neg = 1;
+	num = n;
+	int_size = 1;
 	while (n >= 10 || n <= -10)
 	{
 		n /= 10;
 		int_size++;
 	}
-	arr = malloc(sizeof(char) * (int_size + is_negative + 1));
-	if (arr == NULL)
+	arr = (char *) ft_calloc((int_size + is_neg + 1), sizeof(char));
+	if (!arr)
 		return (NULL);
-	if (is_negative == 1)
+	if (is_neg)
 		ft_fill_array(num, arr, int_size);
 	else
-		ft_fill_array(num, arr, int_size - 1);
-	arr[int_size + is_negative] = '\0';
+		ft_fill_array(num, arr, (int_size - 1));
 	return (arr);
 }

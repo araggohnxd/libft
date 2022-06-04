@@ -3,6 +3,9 @@ a.out
 .normignore
 todo/
 libft-war-machine/
-libftTester/
+*Tester/
 tests/
 objects/
+*.a
+*.so
+*.o

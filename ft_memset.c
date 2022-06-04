@@ -6,7 +6,7 @@
 /*   By: maolivei <maolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 16:28:14 by maolivei          #+#    #+#             */
-/*   Updated: 2022/03/31 16:35:39 by maolivei         ###   ########.fr       */
+/*   Updated: 2022/06/03 17:48:06 by maolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	*ft_memset(void *s, int c, size_t n)
 	char	*set;
 
 	set = s;
-	while (n-- > 0)
+	while (n--)
 		*set++ = c;
 	return (s);
 }

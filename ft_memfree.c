@@ -1,23 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_free_split.c                                    :+:      :+:    :+:   */
+/*   ft_memfree.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maolivei <maolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/13 22:01:18 by maolivei          #+#    #+#             */
-/*   Updated: 2022/06/03 17:39:24 by maolivei         ###   ########.fr       */
+/*   Created: 2022/06/03 16:41:04 by maolivei          #+#    #+#             */
+/*   Updated: 2022/06/03 16:42:54 by maolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_free_split(char ***split)
+void	ft_memfree(void	**ptr)
 {
-	char	**sp;
-
-	sp = *split;
-	while (*sp)
-		ft_memfree((void *) sp++);
-	ft_memfree((void *) split);
+	if (*ptr)
+	{
+		free(*ptr);
+		*ptr = NULL;
+	}
 }

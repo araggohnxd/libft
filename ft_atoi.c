@@ -6,7 +6,7 @@
 /*   By: maolivei <maolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/03 23:17:10 by maolivei          #+#    #+#             */
-/*   Updated: 2022/04/05 22:06:31 by maolivei         ###   ########.fr       */
+/*   Updated: 2022/06/03 10:50:16 by maolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,17 @@
 
 int	ft_atoi(const char *nptr)
 {
-	size_t	i;
-	int		result;
-	int		min_count;
+	int			is_neg;
+	int			result;
 
-	i = 0;
+	while (ft_isspace(*nptr))
+		nptr++;
+	is_neg = 1;
+	if (*nptr == '-' || *nptr == '+')
+		if (*nptr++ == '-')
+			is_neg = -1;
 	result = 0;
-	min_count = 0;
-	while ((nptr[i] >= 9 && nptr[i] <= 13) || nptr[i] == 32)
-		i++;
-	if ((nptr[i] == '-' || nptr[i] == '+'))
-	{
-		if (nptr[i] == '-')
-			min_count++;
-		i++;
-	}
-	while ((nptr[i] >= '0' && nptr[i] <= '9'))
-		result = (result * 10) + (nptr[i++] - '0');
-	if (min_count % 2 == 1)
-		return (-result);
-	return (result);
+	while (*nptr >= '0' && *nptr <= '9')
+		result = (result * 10) + (*nptr++ - '0');
+	return (result * is_neg);
 }

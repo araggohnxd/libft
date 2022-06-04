@@ -1,23 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_free_split.c                                    :+:      :+:    :+:   */
+/*   ft_isspace.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maolivei <maolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/13 22:01:18 by maolivei          #+#    #+#             */
-/*   Updated: 2022/06/03 17:39:24 by maolivei         ###   ########.fr       */
+/*   Created: 2022/06/02 22:09:19 by maolivei          #+#    #+#             */
+/*   Updated: 2022/06/02 22:09:27 by maolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_free_split(char ***split)
+int	ft_isspace(char c)
 {
-	char	**sp;
-
-	sp = *split;
-	while (*sp)
-		ft_memfree((void *) sp++);
-	ft_memfree((void *) split);
+	return ((c >= 9 && c <= 13) || c == 32);
 }

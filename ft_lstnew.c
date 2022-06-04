@@ -6,7 +6,7 @@
 /*   By: maolivei <maolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 11:36:27 by maolivei          #+#    #+#             */
-/*   Updated: 2022/04/07 14:51:32 by maolivei         ###   ########.fr       */
+/*   Updated: 2022/06/03 20:26:56 by maolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ t_list	*ft_lstnew(void *content)
 {
 	t_list	*new;
 
-	new = ft_calloc(1, sizeof(t_list));
+	new = (t_list *) ft_calloc(1, sizeof(t_list));
 	if (new == NULL)
 		return (NULL);
 	new->content = content;

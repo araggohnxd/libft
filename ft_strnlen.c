@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_free_split.c                                    :+:      :+:    :+:   */
+/*   ft_strnlen.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maolivei <maolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/13 22:01:18 by maolivei          #+#    #+#             */
-/*   Updated: 2022/06/03 17:39:24 by maolivei         ###   ########.fr       */
+/*   Created: 2022/06/03 00:51:10 by maolivei          #+#    #+#             */
+/*   Updated: 2022/06/03 19:16:22 by maolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_free_split(char ***split)
+size_t	ft_strnlen(const char *s, size_t maxlen)
 {
-	char	**sp;
+	size_t	length;
 
-	sp = *split;
-	while (*sp)
-		ft_memfree((void *) sp++);
-	ft_memfree((void *) split);
+	length = 0;
+	while (length < maxlen && s[length])
+		++length;
+	return (length);
 }

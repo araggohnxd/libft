@@ -6,7 +6,7 @@
 /*   By: maolivei <maolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 14:43:19 by maolivei          #+#    #+#             */
-/*   Updated: 2022/05/14 19:25:24 by maolivei         ###   ########.fr       */
+/*   Updated: 2022/06/03 19:14:50 by maolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,32 +18,25 @@
 # include <unistd.h>
 # include <stdarg.h>
 
-// macros and enumerators
+// Macros and enumerators
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 42
 # endif
-
 # define MAX_FD_VALUE 1024
 # define HEX_BASE_LOWER "0123456789abcdef"
 # define HEX_BASE_UPPER "0123456789ABCDEF"
+# define FALSE 0
+# define TRUE 1
+# define INT 2
+# define CHAR 3
+# define STR 4
+# define PTR 5
+# define UINT 6
+# define HEX_L 7
+# define HEX_U 8
+# define PERCENT 9
 
-enum e_bool {
-	FALSE,
-	TRUE
-};
-
-enum e_types {
-	INT = 2,
-	CHAR,
-	STR,
-	PTR,
-	UINT,
-	HEX_L,
-	HEX_U,
-	PERCENT
-};
-
-// type definitions
+// Type definitions
 typedef unsigned int		t_uint;
 typedef unsigned long		t_ulong;
 
@@ -54,7 +47,13 @@ typedef struct s_list
 	struct s_list	*next;
 }	t_list;
 
-// Part 1 - Libc functions
+/*
+
+
+PART 1 - LIBC FUNCTIONS
+
+
+*/
 /**
 * @brief Verifies if c is an alphabetic character.
 * @param c Character to be verified.
@@ -157,14 +156,14 @@ void	ft_bzero(void *s, size_t n);
 char	*ft_strdup(const char *s);
 
 /**
-* @brief Locates the first occurrence of the null-terminated string little
-* in the string big, where not more than len characters are searched.
-* @param big String to be searched.
-* @param little Substring to search in big.
-* @param len Number of bytes to search (at most, little length).
-* @return
+* @brief Locates the first occurrence of the null-terminated string needle
+* in the string haystack, where not more than len characters are searched.
+* @param haystack String to be searched.
+* @param needle Substring to search in haystack.
+* @param len Number of bytes to search (at most, needle length).
+* @return A pointer to the first occurence of needle string or NULL on error.
 */
-char	*ft_strnstr(const char *big, const char *little, size_t len);
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 
 /**
 * @brief Returns a pointer to the first occurrence
@@ -273,7 +272,13 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size);
 */
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
 
-// Part 2 - Additional functions
+/*
+
+
+PART 2 - ADDITIONAL FUNCTIONS
+
+
+*/
 /**
 * @brief Converts the integer n
 * to a string representation of the given number.
@@ -356,13 +361,6 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char	**ft_split(char const *s, char c);
 
 /**
-* @brief Frees the memory of an array of strings.
-* @param split The array to be freed.
-* @return Nothing.
-*/
-void	ft_free_split(char **split);
-
-/**
 * @brief Applies the function f on each character of the string
 * passed as argument, passing its index as first argument.
 * Each character is passed by address to f to be modified if necessary.
@@ -408,7 +406,13 @@ void	ft_putendl_fd(char *s, int fd);
 */
 void	ft_putnbr_fd(int n, int fd);
 
-// Bonus part
+/*
+
+
+BONUS PART
+
+
+*/
 /**
 * @brief Counts the number of nodes in a list.
 * @param lst Beggining of the list (head node).
@@ -496,16 +500,45 @@ t_list	*ft_lstlast(t_list *lst);
 */
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
-// Added later
-/**
-* @brief Read and return a line from a given file descriptor.
-* Consecutive calls to this function will return the next line of the file
-* descriptor, until EOF.
-* @param fd The file descriptor to read from.
-* @return A pointer to a string containing the line read,
-* or NULL if EOF is reached or an error occurs.
+/*
+
+
+ADDED LATER
+
+
 */
-char	*ft_get_next_line(int fd);
+/**
+* @brief Verifies if c is a space character.
+* @param c Character to be verified.
+* @return 1 if character is space, else returns 0.
+*/
+int		ft_isspace(char c);
+
+/**
+* @brief Calculates the length of the string pointed to by s,
+* excluding the terminating null byte ('\0'), but at most maxlen.
+* In doing this, ft_strnlen() looks only at the first maxlen characters
+* in the string pointed to by s and never beyond s[maxlen-1].
+* @param s String to calculate length of.
+* @param maxlen Maximun amount of characters to calculate.
+* @return The number of bytes among the first maxlen characters
+* in the string pointed to by s.
+*/
+size_t	ft_strnlen(const char *s, size_t maxlen);
+
+/**
+* @brief Free ptr and point it to NULL.
+* @param ptr Memory to be freed.
+* @return Nothing.
+*/
+void	ft_memfree(void	**ptr);
+
+/**
+* @brief Frees the memory of an array of strings.
+* @param split The array to be freed.
+* @return Nothing.
+*/
+void	ft_free_split(char ***split);
 
 /**
 * @brief Copies a string src to a dst until it reaches a newline.
@@ -529,6 +562,23 @@ size_t	ft_newlinecpy(char *dst, const char *src, size_t index);
 * @return A pointer to the created string containing the number.
 */
 char	*ft_itoa_base(t_ulong n, char *base);
+
+/*
+
+
+GET_NEXT_LINE & FT_PRINTF
+
+
+*/
+/**
+* @brief Read and return a line from a given file descriptor.
+* Consecutive calls to this function will return the next line of the file
+* descriptor, until EOF.
+* @param fd The file descriptor to read from.
+* @return A pointer to a string containing the line read,
+* or NULL if EOF is reached or an error occurs.
+*/
+char	*ft_get_next_line(int fd);
 
 /**
 * @brief Print an output to the standard output stream (terminal),
@@ -598,4 +648,4 @@ int		ft_handler_string(char *string);
 */
 int		ft_handler_unsigned(t_uint uint);
 
-#endif
+#endif /* LIBFT_H */
