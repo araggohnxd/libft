@@ -6,7 +6,7 @@
 /*   By: maolivei <maolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/04 13:08:22 by maolivei          #+#    #+#             */
-/*   Updated: 2022/06/03 17:28:43 by maolivei         ###   ########.fr       */
+/*   Updated: 2022/06/03 21:18:42 by maolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@
 */
 static char	**ft_fill_split(char **split, const char *s, char c, size_t words)
 {
-	int			start;
-	int			end;
-	size_t		index;
+	int		start;
+	int		end;
+	size_t	index;
 
 	start = 0;
 	index = 0;
@@ -80,8 +80,8 @@ static size_t	ft_count_words(const char *s, char c)
 
 char	**ft_split(char const *s, char c)
 {
-	size_t		words;
-	char		**split;
+	size_t	words;
+	char	**split;
 
 	if (!s)
 		return (NULL);

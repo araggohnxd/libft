@@ -6,7 +6,7 @@
 /*   By: maolivei <maolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/03 23:17:10 by maolivei          #+#    #+#             */
-/*   Updated: 2022/06/03 10:50:16 by maolivei         ###   ########.fr       */
+/*   Updated: 2022/06/03 21:17:30 by maolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	ft_atoi(const char *nptr)
 {
-	int			is_neg;
-	int			result;
+	int	is_neg;
+	int	result;
 
 	while (ft_isspace(*nptr))
 		nptr++;
