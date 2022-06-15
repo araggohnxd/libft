@@ -12,12 +12,12 @@
 
 #include "libft.h"
 
-void	ft_free_split(char ***split)
+void	ft_free_matrix(void ***matrix)
 {
-	char	**sp;
+	void	**aux;
 
-	sp = *split;
-	while (*sp)
-		ft_memfree((void *) sp++);
-	ft_memfree((void *) split);
+	aux = *matrix;
+	while (*aux)
+		ft_memfree((void *) aux++);
+	ft_memfree((void *) matrix);
 }

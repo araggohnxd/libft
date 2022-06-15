@@ -6,7 +6,7 @@
 /*   By: maolivei <maolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 14:43:19 by maolivei          #+#    #+#             */
-/*   Updated: 2022/06/05 22:57:08 by maolivei         ###   ########.fr       */
+/*   Updated: 2022/06/15 15:07:07 by maolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -534,11 +534,11 @@ size_t	ft_strnlen(const char *s, size_t maxlen);
 void	ft_memfree(void	**ptr);
 
 /**
-* @brief Frees the memory of an array of strings.
-* @param split The array to be freed.
+* @brief Frees the memory of a matrix of any type.
+* @param matrix Matrix to be freed.
 * @return Nothing.
 */
-void	ft_free_split(char ***split);
+void	ft_free_matrix(void ***matrix);
 
 /**
 * @brief Copies a string src to a dst until it reaches a newline.
