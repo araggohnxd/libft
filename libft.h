@@ -6,7 +6,7 @@
 /*   By: maolivei <maolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 14:43:19 by maolivei          #+#    #+#             */
-/*   Updated: 2022/06/27 10:47:21 by maolivei         ###   ########.fr       */
+/*   Updated: 2022/06/30 02:02:30 by maolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,20 +34,26 @@
 # define MAX_FD_VALUE 1024
 # define HEX_BASE_LOWER "0123456789abcdef"
 # define HEX_BASE_UPPER "0123456789ABCDEF"
-# define FALSE 0
-# define TRUE 1
-# define INT 2
-# define CHAR 3
-# define STR 4
-# define PTR 5
-# define UINT 6
-# define HEX_L 7
-# define HEX_U 8
-# define PERCENT 9
+# define CHAR 'c'
+# define STR 's'
+# define PTR 'p'
+# define DEC 'd'
+# define INT 'i'
+# define UINT 'u'
+# define HEXL 'x'
+# define HEXU 'X'
+# define PERCENT '%'
+
+typedef enum e_bool {
+	FALSE,
+	TRUE
+}	t_bool;
 
 // Type definitions
+typedef long long			t_llong;
 typedef unsigned int		t_uint;
 typedef unsigned long		t_ulong;
+typedef unsigned long long	t_ullong;
 
 /* The basic structure of a linked list node. */
 typedef struct s_list
@@ -550,15 +556,14 @@ void	ft_memfree(void	**ptr);
 void	ft_free_matrix(void ***matrix);
 
 /**
-* @brief Copies a string src to a dst until it reaches a newline.
-* The copying starts at the index received as a parementer.
-* @param dst Destination string.
-* @param src Source string.
-* @param index Index of destination to copy to.
-* @return The index of the end of destination string (could be interpreted
-* as it's length).
+* @brief Converts the unsigned integer n
+* to a string representation of the given number.
+* Memory for the new string is obtained with malloc(),
+* and can be freed with free().
+* @param n Unsigned integer to convert.
+* @return A pointer to the created string containing the number.
 */
-size_t	ft_newlinecpy(char *dst, const char *src, size_t index);
+char	*ft_utoa(t_uint n);
 
 /**
 * @brief Converts the decimal base integer n
@@ -610,61 +615,41 @@ char	*ft_gnl_multifd(int fd);
 int		ft_printf(const char *format, ...);
 
 /**
-* @brief Handles ft_printf()'s %c argument.
-* @param character Character to be printed.
+* @brief Handles ft_printf()'s %d and %i specifiers.
+* @param number Decimal or integer to be printed.
 * @return The number of characters printed.
 */
-int		ft_handler_character(char character);
+int		ft_handler_integer(int number);
 
 /**
-* @brief Handles ft_printf()'s %d and %i arguments.
-* @param decimal Decimal or integer to be printed.
+* @brief Handles ft_printf()'s %u specifier.
+* @param number Unsigned number to be printed.
 * @return The number of characters printed.
 */
-int		ft_handler_decimal(int decimal);
+int		ft_handler_unsigned(t_uint number);
 
 /**
-* @brief Handles ft_printf()'s %x argument.
-* @param num Number to be converted to
-* lowercase hexadecimal and printed.
+* @brief Handles ft_printf()'s %x and %X specifiers.
+* @param specifier Specifier for lowercase or uppercase.
+* @param number Number to be converted to
+* hexadecimal and printed.
 * @return The number of characters printed.
 */
-int		ft_handler_hex_lower(t_uint num);
+int		ft_handler_hex(char specifier, t_uint number);
 
 /**
-* @brief Handles ft_printf()'s %X argument.
-* @param num Number to be converted to
-* uppercase hexadecimal and printed.
-* @return The number of characters printed.
-*/
-int		ft_handler_hex_upper(t_uint num);
-
-/**
-* @brief Handles ft_printf()'s %% argument.
-* @return The number of characters printed.
-*/
-int		ft_handler_percent(void);
-
-/**
-* @brief Handles ft_printf()'s %p argument.
-* @param pointer_size Pointer to have it's
+* @brief Handles ft_printf()'s %p specifier.
+* @param pointer Pointer to have it's
 * address printed.
 * @return The number of characters printed.
 */
-int		ft_handler_pointer(t_ulong pointer_size);
+int		ft_handler_pointer(void *pointer);
 
 /**
-* @brief Handles ft_printf()'s %s argument.
+* @brief Handles ft_printf()'s %s specifier.
 * @param string String to be printed.
 * @return The number of characters printed.
 */
 int		ft_handler_string(char *string);
-
-/**
-* @brief Handles ft_printf()'s %u argument.
-* @param uint Unsigned number to be printed.
-* @return The number of characters printed.
-*/
-int		ft_handler_unsigned(t_uint uint);
 
 #endif /* LIBFT_H */

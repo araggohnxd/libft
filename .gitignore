@@ -3,6 +3,7 @@ a.out
 .normignore
 todo/
 libft-war-machine/
+ft_printf_tester/
 *Tester/
 tests/
 objects/
