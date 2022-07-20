@@ -1,30 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_skip_chars.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maolivei <maolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/03 23:17:10 by maolivei          #+#    #+#             */
-/*   Updated: 2022/07/20 01:03:43 by maolivei         ###   ########.fr       */
+/*   Created: 2022/07/20 00:54:35 by maolivei          #+#    #+#             */
+/*   Updated: 2022/07/20 00:54:59 by maolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *nptr)
+void	ft_skip_chars(char *str, int (*f)(int))
 {
-	int	is_neg;
-	int	result;
+	size_t	index;
 
-	while (ft_isspace(*nptr))
-		nptr++;
-	is_neg = 1;
-	if (*nptr == '-' || *nptr == '+')
-		if (*nptr++ == '-')
-			is_neg = -1;
-	result = 0;
-	while (ft_isdigit(*nptr))
-		result = (result * 10) + (*nptr++ - '0');
-	return (result * is_neg);
+	index = 0;
+	while (f(str[index]))
+		++index;
+	ft_strlcpy(str, (str + index), (ft_strlen(str) - index + 1));
 }

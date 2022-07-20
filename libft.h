@@ -6,7 +6,7 @@
 /*   By: maolivei <maolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 14:43:19 by maolivei          #+#    #+#             */
-/*   Updated: 2022/06/30 02:02:30 by maolivei         ###   ########.fr       */
+/*   Updated: 2022/07/20 00:57:53 by maolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -527,7 +527,7 @@ ADDED LATER
 * @param c Character to be verified.
 * @return 1 if character is space, else returns 0.
 */
-int		ft_isspace(char c);
+int		ft_isspace(int c);
 
 /**
 * @brief Calculates the length of the string pointed to by s,
@@ -576,6 +576,36 @@ char	*ft_utoa(t_uint n);
 * @return A pointer to the created string containing the number.
 */
 char	*ft_itoa_base(t_ulong n, char *base);
+
+/**
+* @brief Converts the initial portion of the string pointed to by nptr to
+* long long.
+* @param nptr The string to be converted.
+* @return Converted value or 0 on error.
+*/
+t_llong	ft_atoll(const char *nptr);
+
+/**
+* @brief Compares two strings
+* (each interpreted as unsigned char)
+* by its ASCII values.
+* @param s1 First string.
+* @param s2 Second string.
+* @param n Number of bytes to compare.
+* @return -1, 0 or 1 if s1 is less, equal or greater than s2,
+* respectively.
+*/
+int		ft_strcmp(const char *s1, const char *s2);
+
+/**
+* @brief Skip specific characters on a string, using function f,
+* received as a parameter.
+* @param str String to skip characters from.
+* @param f Function used to check characters that should be skipped.
+* @param f(int) Char to be checked.
+* @return Nothing.
+*/
+void	ft_skip_chars(char *str, int (*f)(int));
 
 /*
 
