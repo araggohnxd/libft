@@ -6,7 +6,7 @@
 /*   By: maolivei <maolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 14:43:19 by maolivei          #+#    #+#             */
-/*   Updated: 2022/07/20 00:57:53 by maolivei         ###   ########.fr       */
+/*   Updated: 2022/08/01 19:53:22 by maolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -316,17 +316,6 @@ char	*ft_itoa(int n);
 char	*ft_strjoin(char const *s1, char const *s2);
 
 /**
-* @brief Creates a new string, which is the result
-* of the concatenation of s1 and s2, then free()s both s1 and s2.
-* Memory for the new string is obtained with malloc(),
-* and can be freed with free().
-* @param s1 First string.
-* @param s2 Second string.
-* @return A pointer to the created string or NULL on error.
-*/
-char	*ft_strjoin_free(char **s1, char **s2);
-
-/**
 * @brief Creates a copy of s1 with the characters specified in set
 * removed from the beginning and the end of the string.
 * Memory for the new string is obtained with malloc(),
@@ -606,6 +595,41 @@ int		ft_strcmp(const char *s1, const char *s2);
 * @return Nothing.
 */
 void	ft_skip_chars(char *str, int (*f)(int));
+
+/**
+* @brief Creates a copy of s1 with the characters specified in set
+* removed from the beginning and the end of the string, then
+* free()s s1.
+* Memory for the new string is obtained with malloc(),
+* and can be freed with free().
+* @param s1 String to trim from.
+* @param set Set of characters to trim.
+* @return A pointer to the trimmed string or NULL on error.
+*/
+char	*ft_strtrim_free(char **s1, char const *set);
+
+/**
+* @brief Creates a new string, which is the result
+* of the concatenation of s1 and s2, then free()s both s1 and s2.
+* Memory for the new string is obtained with malloc(),
+* and can be freed with free().
+* @param s1 First string.
+* @param s2 Second string.
+* @return A pointer to the created string or NULL on error.
+*/
+char	*ft_strjoin_free(char *s1, char *s2);
+
+/**
+* @brief Creates a new string, which is the result
+* of the concatenation of s1 and s2, then free()s and points
+* both s1 and s2 to NULL.
+* Memory for the new string is obtained with malloc(),
+* and can be freed with free().
+* @param s1 First string.
+* @param s2 Second string.
+* @return A pointer to the created string or NULL on error.
+*/
+char	*ft_strjoin_free_null(char **s1, char **s2);
 
 /*
 
