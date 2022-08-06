@@ -13,8 +13,8 @@ SOURCE_FILES		+= ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c f
 SOURCE_FILES		+= ft_gnl.c ft_gnl_multifd.c ft_printf.c ft_printf_handlers.c ft_strjoin_free.c
 SOURCE_FILES		+= ft_free_matrix.c ft_isspace.c ft_strnlen.c ft_memfree.c ft_utoa.c ft_atoll.c
 SOURCE_FILES		+= ft_strcmp.c ft_skip_chars.c ft_lstnew.c ft_lstadd_front.c ft_lstsize.c
-SOURCE_FILES		+= ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c
-SOURCE_FILES		+= ft_lstmap.c ft_strtrim_free.c ft_strjoin_free_null.c
+SOURCE_FILES		+= ft_strtrim_free.c ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c
+SOURCE_FILES		+= ft_lstmap.c ft_lstlast.c ft_strjoin_free_null.c ft_memccpy.c ft_mempcpy.c
 
 OBJECT_PATH			:= objects
 OBJECT_FILES		:= $(SOURCE_FILES:%.c=$(OBJECT_PATH)/%.o)
@@ -45,8 +45,7 @@ fclean:				clean
 
 re:					fclean all
 
-so:
-					$(CC) $(CFLAGS) -nostartfiles -fPIC  $(SOURCE_FILES)
+so:					all
 					gcc -nostartfiles -shared -o $(SO) $(OBJECT_FILES)
 
 .PHONY:				all clean fclean re so
