@@ -6,7 +6,7 @@
 /*   By: maolivei <maolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 14:43:19 by maolivei          #+#    #+#             */
-/*   Updated: 2022/08/06 13:10:54 by maolivei         ###   ########.fr       */
+/*   Updated: 2022/08/07 20:39:35 by maolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -237,7 +237,8 @@ void	*ft_memmove(void *dest, const void *src, size_t n);
 * @param s Memory area to scan.
 * @param c Character to scan for.
 * @param n Number of bytes to scan.
-* @return
+* @return A pointer to the matching byte, or NULL if
+* the character c does not occur in the given memory area.
 */
 void	*ft_memchr(const void *s, int c, size_t n);
 
