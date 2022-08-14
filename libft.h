@@ -581,7 +581,6 @@ t_llong	ft_atoll(const char *nptr);
 * by its ASCII values.
 * @param s1 First string.
 * @param s2 Second string.
-* @param n Number of bytes to compare.
 * @return -1, 0 or 1 if s1 is less, equal or greater than s2,
 * respectively.
 */
