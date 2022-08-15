@@ -6,7 +6,7 @@
 /*   By: maolivei <maolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 11:29:36 by maolivei          #+#    #+#             */
-/*   Updated: 2022/08/15 02:16:01 by maolivei         ###   ########.fr       */
+/*   Updated: 2022/08/15 11:38:10 by maolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,9 +55,6 @@ char	*ft_itoa(int n)
 	arr = (char *)ft_calloc((int_size + is_neg + 1), sizeof(char));
 	if (!arr)
 		return (NULL);
-	if (is_neg)
-		ft_fill_array(num, arr, int_size);
-	else
-		ft_fill_array(num, arr, (int_size - 1));
+	ft_fill_array(num, arr, (int_size + is_neg - 1));
 	return (arr);
 }

@@ -6,7 +6,7 @@
 /*   By: maolivei <maolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 14:43:19 by maolivei          #+#    #+#             */
-/*   Updated: 2022/08/15 02:14:48 by maolivei         ###   ########.fr       */
+/*   Updated: 2022/08/15 11:31:05 by maolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -471,7 +471,7 @@ char		**ft_split(char const *s, char c);
 * @param f(char*) Address of the character found in the current
 * index of string s.
 */
-void		ft_striteri(char *s, void (*f)(unsigned int, char*));
+void		ft_striteri(char *s, void (*f)(size_t, char*));
 
 /**
 * @brief Applies the function f to each character of the string s,
@@ -486,7 +486,7 @@ void		ft_striteri(char *s, void (*f)(unsigned int, char*));
 * @return A pointer to the string created from the successive applications
 * of f or NULL on error.
 */
-char		*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+char		*ft_strmapi(char const *s, char (*f)(size_t, char));
 
 /**
 * @brief Creates a new string, which is the result
@@ -555,7 +555,7 @@ char		*ft_strtrim_free(char **s1, char const *set);
 * @param len Size of the substring.
 * @return A pointer to the created substring or NULL on error.
 */
-char		*ft_substr(char const *s, unsigned int start, size_t len);
+char		*ft_substr(char const *s, size_t start, size_t len);
 
 /******************************************************************************/
 /*                                                                            */
