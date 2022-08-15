@@ -6,12 +6,19 @@
 /*   By: maolivei <maolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 23:57:18 by maolivei          #+#    #+#             */
-/*   Updated: 2022/08/15 02:02:30 by maolivei         ###   ########.fr       */
+/*   Updated: 2022/08/15 02:14:38 by maolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+* @brief Adds a new colliding item to the hashtable node curr_item
+* with key and value as the parameters received.
+* @param curr_item Node to add the colliding item to.
+* @param key New item's key.
+* @param value New item's value.
+*/
 static void	ft_htadd_colliding(t_htnode *curr_item, char *key, char *value)
 {
 	while (curr_item->next)

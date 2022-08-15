@@ -6,7 +6,7 @@
 /*   By: maolivei <maolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 14:43:19 by maolivei          #+#    #+#             */
-/*   Updated: 2022/08/14 22:01:15 by maolivei         ###   ########.fr       */
+/*   Updated: 2022/08/15 02:14:48 by maolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -762,7 +762,7 @@ void		ft_htclear(t_hashtable *table);
 /**
 * @brief Deletes and frees the item correspondent to the given key
 * from the hasthable.
-* @param table Hashtable to delete item from.
+* @param table Hashtable to delete the item from.
 * @param key Key to the item to be deleted.
 */
 void		ft_htdelone(t_hashtable *table, char *key);

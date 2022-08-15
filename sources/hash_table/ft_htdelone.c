@@ -6,12 +6,18 @@
 /*   By: maolivei <maolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 23:57:18 by maolivei          #+#    #+#             */
-/*   Updated: 2022/08/15 02:00:58 by maolivei         ###   ########.fr       */
+/*   Updated: 2022/08/15 02:14:34 by maolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+* @brief Deletes and frees the colliding item correspondent to the given key
+* from the hashtable node.
+* @param item Node to delete the colliding item from.
+* @param key Key to the item to be deleted.
+*/
 static void	ft_htdelone_colliding(t_htnode *item, char *key)
 {
 	t_htnode	*previous;
