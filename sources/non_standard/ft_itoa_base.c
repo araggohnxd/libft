@@ -6,7 +6,7 @@
 /*   By: maolivei <maolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/14 21:18:51 by maolivei          #+#    #+#             */
-/*   Updated: 2022/06/03 12:29:17 by maolivei         ###   ########.fr       */
+/*   Updated: 2022/08/15 02:16:01 by maolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ char	*ft_itoa_base(t_ulong n, char *base)
 		n /= base_size;
 		num_size++;
 	}
-	arr = (char *) ft_calloc((num_size + 1), sizeof(char));
+	arr = (char *)ft_calloc((num_size + 1), sizeof(char));
 	if (!arr)
 		return (NULL);
 	while (num_size--)

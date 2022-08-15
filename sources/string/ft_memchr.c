@@ -6,7 +6,7 @@
 /*   By: maolivei <maolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/01 19:15:24 by maolivei          #+#    #+#             */
-/*   Updated: 2022/06/05 14:51:55 by maolivei         ###   ########.fr       */
+/*   Updated: 2022/08/15 02:18:18 by maolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	const unsigned char	*us = (unsigned char *) s;
-	const unsigned char	uc = (unsigned char) c;
+	const unsigned char	*us = (unsigned char *)s;
+	const unsigned char	uc = (unsigned char)c;
 
 	while (n--)
 		if (*us++ == uc)

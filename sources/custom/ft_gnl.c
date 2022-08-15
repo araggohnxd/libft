@@ -6,7 +6,7 @@
 /*   By: maolivei <maolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 11:52:03 by maolivei          #+#    #+#             */
-/*   Updated: 2022/08/01 19:57:11 by maolivei         ###   ########.fr       */
+/*   Updated: 2022/08/15 02:16:38 by maolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ static char	*ft_read_line(int fd, char *buffer)
 	{
 		if (ft_strchr(buffer, '\n'))
 			break ;
-		aux = (char *) malloc(sizeof(char) * (BUFFER_SIZE + 1));
+		aux = (char *)malloc(sizeof(char) * (BUFFER_SIZE + 1));
 		if (!aux)
 			return (NULL);
 		read_ret = read(fd, aux, BUFFER_SIZE);
@@ -54,7 +54,7 @@ static char	*ft_read_line(int fd, char *buffer)
 		buffer = ft_strjoin_free_null(&buffer, &aux);
 	}
 	if (!*buffer)
-		ft_memfree((void *) &buffer);
+		ft_memfree((void *)&buffer);
 	return (buffer);
 }
 

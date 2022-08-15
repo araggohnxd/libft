@@ -6,7 +6,7 @@
 /*   By: maolivei <maolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 11:29:36 by maolivei          #+#    #+#             */
-/*   Updated: 2022/06/30 01:46:21 by maolivei         ###   ########.fr       */
+/*   Updated: 2022/08/15 02:16:01 by maolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ char	*ft_utoa(t_uint n)
 		n /= 10;
 		uint_size++;
 	}
-	arr = (char *) ft_calloc((uint_size + 1), sizeof(char));
+	arr = (char *)ft_calloc((uint_size + 1), sizeof(char));
 	if (!arr)
 		return (NULL);
 	ft_fill_array(num, arr, (uint_size - 1));

@@ -6,7 +6,7 @@
 /*   By: maolivei <maolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/04 13:08:22 by maolivei          #+#    #+#             */
-/*   Updated: 2022/06/15 15:06:25 by maolivei         ###   ########.fr       */
+/*   Updated: 2022/08/15 02:16:38 by maolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,10 @@ static char	**ft_fill_split(char **split, const char *s, char c, size_t words)
 		end = start;
 		while (s[end] != c && s[end])
 			++end;
-		split[index] = (char *) ft_calloc((end - start + 1), sizeof(char));
+		split[index] = (char *)ft_calloc((end - start + 1), sizeof(char));
 		if (!split[index])
 		{
-			ft_free_matrix((void *) &split);
+			ft_free_matrix((void *)&split);
 			return (NULL);
 		}
 		ft_strlcpy(split[index], (s + start), (end - start + 1));
@@ -86,7 +86,7 @@ char	**ft_split(char const *s, char c)
 	if (!s)
 		return (NULL);
 	words = ft_count_words(s, c);
-	split = (char **) ft_calloc(words + 1, sizeof(char *));
+	split = (char **)ft_calloc(words + 1, sizeof(char *));
 	if (!split)
 		return (NULL);
 	split = ft_fill_split(split, s, c, words);

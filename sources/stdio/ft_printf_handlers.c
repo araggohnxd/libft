@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf_handlers.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
+/*   By: maolivei <maolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 02:04:07 by maolivei          #+#    #+#             */
-/*   Updated: 2022/08/02 06:00:17 by coder            ###   ########.fr       */
+/*   Updated: 2022/08/15 02:19:49 by maolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ int	ft_handler_pointer(void *pointer)
 
 	if (!pointer)
 		return (ft_handler_string("(nil)"));
-	pointer_address = (t_ulong) pointer;
+	pointer_address = (t_ulong)pointer;
 	arr = ft_itoa_base(pointer_address, HEX_BASE_LOWER);
 	ft_putstr_fd("0x", STDOUT);
 	ft_putstr_fd(arr, STDOUT);

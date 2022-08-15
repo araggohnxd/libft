@@ -6,7 +6,7 @@
 /*   By: maolivei <maolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/04 12:18:13 by maolivei          #+#    #+#             */
-/*   Updated: 2022/07/24 19:54:07 by maolivei         ###   ########.fr       */
+/*   Updated: 2022/08/15 02:15:42 by maolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		return (NULL);
 	s1_len = ft_strlen(s1);
 	s2_len = ft_strlen(s2);
-	str = (char *) malloc(sizeof(char) * (s1_len + s2_len + 1));
+	str = (char *)malloc(sizeof(char) * (s1_len + s2_len + 1));
 	if (str == NULL)
 		return (NULL);
 	ft_strlcpy(str, s1, (s1_len + 1));
