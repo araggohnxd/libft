@@ -4,7 +4,7 @@ SO					:= $(NAME:.a=.so)
 HEADER_PATH			:= includes
 HEADER_FILES		:= libft.h internals.h
 
-SOURCE_DIRS			:= ctype string stdio stdlib custom non_standard linked_list
+SOURCE_DIRS			:= ctype string stdio stdlib custom non_standard linked_list hash_table
 SOURCE_PATH			:= $(addprefix sources/, $(SOURCE_DIRS))
 
 # ctype
@@ -36,6 +36,10 @@ SOURCE_FILES		+= ft_itoa_base.c ft_itoa.c ft_strlcat.c ft_strlcpy.c ft_utoa.c
 # linked_list
 SOURCE_FILES		+= ft_lstadd_back.c ft_lstadd_front.c ft_lstclear.c ft_lstdelone.c
 SOURCE_FILES		+= ft_lstiter.c ft_lstlast.c ft_lstmap.c ft_lstnew.c ft_lstsize.c
+
+# hash_table
+SOURCE_FILES		+= ft_htadd.c ft_htclear.c ft_htdelone.c ft_htfree.c ft_hthasher.c
+SOURCE_FILES		+= ft_htnew.c ft_htsearch.c
 
 OBJECT_PATH			:= objects
 OBJECT_FILES		:= $(SOURCE_FILES:%.c=$(OBJECT_PATH)/%.o)
