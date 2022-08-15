@@ -1,29 +1,51 @@
 NAME				:= libft.a
 SO					:= $(NAME:.a=.so)
 
-HEADER				:= libft.h
+HEADER_PATH			:= includes
+HEADER_FILES		:= libft.h internals.h
 
-SOURCE_PATH			:= sources
-SOURCE_FILES		:= ft_atoi.c ft_calloc.c ft_bzero.c ft_isalnum.c ft_isalpha.c ft_isascii.c
-SOURCE_FILES		+= ft_isdigit.c ft_isprint.c ft_memchr.c ft_memcmp.c ft_memcpy.c ft_memmove.c
-SOURCE_FILES		+= ft_memset.c ft_strchr.c ft_strdup.c ft_strlcat.c ft_strlcpy.c ft_strlen.c
-SOURCE_FILES		+= ft_strncmp.c ft_strnstr.c ft_strrchr.c ft_tolower.c ft_toupper.c ft_substr.c
-SOURCE_FILES		+= ft_strjoin.c ft_strtrim.c ft_split.c ft_itoa.c ft_strmapi.c ft_striteri.c
-SOURCE_FILES		+= ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c ft_itoa_base.c
-SOURCE_FILES		+= ft_gnl.c ft_gnl_multifd.c ft_printf.c ft_printf_handlers.c ft_strjoin_free.c
-SOURCE_FILES		+= ft_free_matrix.c ft_isspace.c ft_strnlen.c ft_memfree.c ft_utoa.c ft_atoll.c
-SOURCE_FILES		+= ft_strcmp.c ft_skip_chars.c ft_lstnew.c ft_lstadd_front.c ft_lstsize.c
-SOURCE_FILES		+= ft_strtrim_free.c ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c
-SOURCE_FILES		+= ft_lstmap.c ft_lstlast.c ft_strjoin_free_null.c ft_memccpy.c ft_mempcpy.c
+SOURCE_DIRS			:= ctype string stdio stdlib custom non_standard linked_list
+SOURCE_PATH			:= $(addprefix sources/, $(SOURCE_DIRS))
+
+# ctype
+SOURCE_FILES		:= ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c ft_isprint.c
+SOURCE_FILES		+= ft_isspace.c ft_tolower.c ft_toupper.c
+
+# string
+SOURCE_FILES		+= ft_bzero.c ft_memccpy.c ft_memchr.c ft_memcmp.c ft_memcpy.c
+SOURCE_FILES		+= ft_memmove.c ft_mempcpy.c ft_memset.c ft_strchr.c ft_strcmp.c
+SOURCE_FILES		+= ft_strdup.c ft_strlen.c ft_strncmp.c ft_strnlen.c ft_strnstr.c
+SOURCE_FILES		+= ft_strrchr.c
+
+# stdio
+SOURCE_FILES		+= ft_printf.c ft_printf_handlers.c
+SOURCE_FILES		+= ft_putchar_fd.c ft_putendl_fd.c ft_putnbr_fd.c ft_putstr_fd.c
+
+# stdlib
+SOURCE_FILES		+= ft_atoi.c ft_atoll.c ft_calloc.c
+
+# custom
+SOURCE_FILES		+= ft_gnl.c ft_gnl_multifd.c ft_memfree.c ft_free_matrix.c
+SOURCE_FILES		+= ft_skip_chars.c ft_split.c ft_striteri.c ft_strmapi.c
+SOURCE_FILES		+= ft_strjoin.c ft_strjoin_free.c ft_strjoin_free_null.c
+SOURCE_FILES		+= ft_strtrim.c ft_strtrim_free.c ft_substr.c
+
+# non_standard
+SOURCE_FILES		+= ft_itoa_base.c ft_itoa.c ft_strlcat.c ft_strlcpy.c ft_utoa.c
+
+# linked_list
+SOURCE_FILES		+= ft_lstadd_back.c ft_lstadd_front.c ft_lstclear.c ft_lstdelone.c
+SOURCE_FILES		+= ft_lstiter.c ft_lstlast.c ft_lstmap.c ft_lstnew.c ft_lstsize.c
 
 OBJECT_PATH			:= objects
 OBJECT_FILES		:= $(SOURCE_FILES:%.c=$(OBJECT_PATH)/%.o)
 
 vpath				%.c $(SOURCE_PATH)
+vpath				%.h $(HEADER_PATH)
 
 CC					:= cc
 CFLAGS				:= -g3 -Wall -Wextra -Werror
-IFLAGS				:= -I .
+IFLAGS				:= -I $(HEADER_PATH)
 REMOVE				:= rm -rf
 
 all:				$(NAME)
@@ -31,7 +53,7 @@ all:				$(NAME)
 $(NAME):			$(OBJECT_FILES) $(OBJECT_PATH)
 					ar -rcs $(NAME) $(OBJECT_FILES)
 
-$(OBJECT_PATH)/%.o:	%.c $(HEADER) Makefile | $(OBJECT_PATH)
+$(OBJECT_PATH)/%.o:	%.c $(HEADER_FILES) Makefile | $(OBJECT_PATH)
 					$(CC) $(CFLAGS) $(IFLAGS) -c $< -o $@
 
 $(OBJECT_PATH):
