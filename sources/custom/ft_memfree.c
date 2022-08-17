@@ -6,7 +6,7 @@
 /*   By: maolivei <maolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 16:41:04 by maolivei          #+#    #+#             */
-/*   Updated: 2022/06/03 16:42:54 by maolivei         ###   ########.fr       */
+/*   Updated: 2022/08/17 11:47:29 by maolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,8 @@
 
 void	ft_memfree(void	**ptr)
 {
-	if (*ptr)
-	{
-		free(*ptr);
-		*ptr = NULL;
-	}
+	if (!*ptr)
+		return ;
+	free(*ptr);
+	*ptr = NULL;
 }
