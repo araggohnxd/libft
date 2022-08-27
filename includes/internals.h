@@ -6,7 +6,7 @@
 /*   By: maolivei <maolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/14 20:46:17 by maolivei          #+#    #+#             */
-/*   Updated: 2022/08/14 21:44:25 by maolivei         ###   ########.fr       */
+/*   Updated: 2022/08/27 13:39:39 by maolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,8 @@ typedef unsigned long		t_ulong;
 typedef unsigned long long	t_ullong;
 
 /* Boolean values */
-typedef enum e_bool {
+typedef enum e_bool
+{
 	FALSE,
 	TRUE
 }	t_bool;
