@@ -6,7 +6,7 @@
 /*   By: maolivei <maolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 16:39:10 by maolivei          #+#    #+#             */
-/*   Updated: 2022/08/15 02:18:47 by maolivei         ###   ########.fr       */
+/*   Updated: 2022/08/27 13:30:18 by maolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,15 +25,9 @@ static int	ft_handle_specifier(char specifier, va_list ap)
 	else if (specifier == HEXL || specifier == HEXU)
 		return (ft_handler_hex(specifier, va_arg(ap, t_uint)));
 	else if (specifier == CHAR)
-	{
-		ft_putchar_fd((char)va_arg(ap, int), STDOUT);
-		return (1);
-	}
+		return (ft_putchar_fd((char)va_arg(ap, int), STDOUT), 1);
 	else if (specifier == PERCENT)
-	{
-		ft_putchar_fd('%', STDOUT);
-		return (1);
-	}
+		return (ft_putchar_fd('%', STDOUT), 1);
 	ft_putchar_fd('%', STDOUT);
 	ft_putchar_fd(specifier, STDOUT);
 	return (2);
