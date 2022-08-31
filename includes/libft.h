@@ -6,7 +6,7 @@
 /*   By: maolivei <maolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 14:43:19 by maolivei          #+#    #+#             */
-/*   Updated: 2022/08/15 11:31:05 by maolivei         ###   ########.fr       */
+/*   Updated: 2022/08/31 16:16:44 by maolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -434,6 +434,17 @@ char		*ft_gnl_multifd(int fd);
 * @param ptr Memory to be freed.
 */
 void		ft_memfree(void	**ptr);
+
+/**
+* @brief Replaces the first occurrence of string 'from' in 'str' to string 'to',
+* then free()s 'str'. Memory for the new string is obtained with malloc(),
+* and can be freed with free().
+* @param str String to edit.
+* @param from Substring to look for.
+* @param to Replacement to the substring.
+* @return A pointer to the created string or NULL on error.
+*/
+char		*ft_stredit(char *str, const char *from, const char *to);
 
 /**
 * @brief Frees the memory of a matrix of any type.

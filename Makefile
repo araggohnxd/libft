@@ -28,7 +28,7 @@ SOURCE_FILES		+= ft_atoi.c ft_atoll.c ft_calloc.c
 SOURCE_FILES		+= ft_gnl.c ft_gnl_multifd.c ft_memfree.c ft_free_matrix.c
 SOURCE_FILES		+= ft_skip_chars.c ft_split.c ft_striteri.c ft_strmapi.c
 SOURCE_FILES		+= ft_strjoin.c ft_strjoin_free.c ft_strjoin_free_null.c
-SOURCE_FILES		+= ft_strtrim.c ft_strtrim_free.c ft_substr.c
+SOURCE_FILES		+= ft_strtrim.c ft_strtrim_free.c ft_substr.c ft_stredit.c
 
 # non_standard
 SOURCE_FILES		+= ft_itoa_base.c ft_itoa.c ft_strlcat.c ft_strlcpy.c ft_utoa.c
