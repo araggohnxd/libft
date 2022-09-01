@@ -6,7 +6,7 @@
 /*   By: maolivei <maolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 14:43:19 by maolivei          #+#    #+#             */
-/*   Updated: 2022/08/31 16:16:44 by maolivei         ###   ########.fr       */
+/*   Updated: 2022/09/01 14:44:33 by maolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -310,6 +310,17 @@ void		ft_putnbr_fd(int n, int fd);
 void		ft_putstr_fd(char *s, int fd);
 
 /**
+* @brief Print an output to the given file descriptor,
+* according to a format specified as a parameter
+* (accepted specifiers: cspdiuxX%).
+* @param fd File descriptor to write to.
+* @param format Desired output formatting.
+* @param ... Variadic arguments.
+* @return The number of characters printed.
+*/
+int			ft_dprintf(int fd, const char *format, ...);
+
+/**
 * @brief Print an output to the standard output file descriptor (terminal),
 * according to a format specified as a parameter
 * (accepted specifiers: cspdiuxX%).
@@ -321,41 +332,46 @@ int			ft_printf(const char *format, ...);
 
 /**
 * @brief Handles ft_printf()'s %d and %i specifiers.
+* @param fd File descriptor to write to.
 * @param number Decimal or integer to be printed.
 * @return The number of characters printed.
 */
-int			ft_handler_integer(int number);
+int			ft_handler_integer(int fd, int number);
 
 /**
 * @brief Handles ft_printf()'s %u specifier.
+* @param fd File descriptor to write to.
 * @param number Unsigned number to be printed.
 * @return The number of characters printed.
 */
-int			ft_handler_unsigned(t_uint number);
+int			ft_handler_unsigned(int fd, t_uint number);
 
 /**
 * @brief Handles ft_printf()'s %x and %X specifiers.
+* @param fd File descriptor to write to.
 * @param specifier Specifier for lowercase or uppercase.
 * @param number Number to be converted to
 * hexadecimal and printed.
 * @return The number of characters printed.
 */
-int			ft_handler_hex(char specifier, t_uint number);
+int			ft_handler_hex(int fd, char specifier, t_uint number);
 
 /**
 * @brief Handles ft_printf()'s %p specifier.
+* @param fd File descriptor to write to.
 * @param pointer Pointer to have it's
 * address printed.
 * @return The number of characters printed.
 */
-int			ft_handler_pointer(void *pointer);
+int			ft_handler_pointer(int fd, void *pointer);
 
 /**
 * @brief Handles ft_printf()'s %s specifier.
+* @param fd File descriptor to write to.
 * @param string String to be printed.
 * @return The number of characters printed.
 */
-int			ft_handler_string(char *string);
+int			ft_handler_string(int fd, char *string);
 
 /******************************************************************************/
 /*                                                                            */

@@ -18,7 +18,7 @@ SOURCE_FILES		+= ft_strdup.c ft_strlen.c ft_strncmp.c ft_strnlen.c ft_strnstr.c
 SOURCE_FILES		+= ft_strrchr.c
 
 # stdio
-SOURCE_FILES		+= ft_printf.c ft_printf_handlers.c
+SOURCE_FILES		+= ft_printf.c ft_dprintf.c ft_printf_handlers.c
 SOURCE_FILES		+= ft_putchar_fd.c ft_putendl_fd.c ft_putnbr_fd.c ft_putstr_fd.c
 
 # stdlib
