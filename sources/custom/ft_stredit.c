@@ -6,7 +6,7 @@
 /*   By: maolivei <maolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 19:50:52 by maolivei          #+#    #+#             */
-/*   Updated: 2022/08/29 20:13:49 by maolivei         ###   ########.fr       */
+/*   Updated: 2022/09/01 14:58:58 by maolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_stredit(char *str, const char *from, const char *to)
 	char	*edited;
 
 	if (!str || !from || !to)
-		return (free(str), NULL);
+		return (ft_memfree((void *)&str), NULL);
 	substring = ft_strnstr(str, from, ft_strlen(str));
 	if (!substring)
 		return (str);
