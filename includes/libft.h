@@ -6,7 +6,7 @@
 /*   By: maolivei <maolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 14:43:19 by maolivei          #+#    #+#             */
-/*   Updated: 2022/09/01 14:44:33 by maolivei         ###   ########.fr       */
+/*   Updated: 2022/09/04 15:11:15 by maolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -430,20 +430,22 @@ void		*ft_calloc(size_t nmemb, size_t size);
 * Consecutive calls to this function will return the next line of the file
 * descriptor, until EOF.
 * @param fd The file descriptor to read from.
+* @param newline Wether to keep the newline in the returned string or not.
 * @return A pointer to a string containing the line read,
 * or NULL if EOF is reached or an error occurs.
 */
-char		*ft_gnl(int fd);
+char		*ft_gnl(int fd, t_bool newline);
 
 /**
 * @brief Read and return a line from a given file descriptor.
 * Consecutive calls to this function will return the next line of the file
 * descriptor, until EOF. This version can handle multiple file descriptors.
 * @param fd The file descriptor to read from.
+* @param newline Wether to keep the newline in the returned string or not.
 * @return A pointer to a string containing the line read,
 * or NULL if EOF is reached or an error occurs.
 */
-char		*ft_gnl_multifd(int fd);
+char		*ft_gnl_multifd(int fd, t_bool newline);
 
 /**
 * @brief Free ptr and point it to NULL.

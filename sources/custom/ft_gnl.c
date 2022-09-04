@@ -6,7 +6,7 @@
 /*   By: maolivei <maolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 11:52:03 by maolivei          #+#    #+#             */
-/*   Updated: 2022/08/15 02:16:38 by maolivei         ###   ########.fr       */
+/*   Updated: 2022/09/04 14:56:50 by maolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,13 +58,17 @@ static char	*ft_read_line(int fd, char *buffer)
 	return (buffer);
 }
 
-char	*ft_gnl(int fd)
+char	*ft_gnl(int fd, t_bool newline)
 {
 	static char	cache[BUFFER_SIZE + 1];
 	char		*buffer;
+	char		*line;
 
 	if (fd < 0 || fd >= MAX_FD_VALUE || BUFFER_SIZE < 1)
 		return (NULL);
 	buffer = ft_read_line(fd, ft_strdup(cache));
-	return (ft_extract_line(buffer, cache));
+	line = ft_extract_line(buffer, cache);
+	if (!newline)
+		line = ft_strtrim_free(&line, "\n");
+	return (line);
 }
