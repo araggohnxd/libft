@@ -6,7 +6,7 @@
 /*   By: maolivei <maolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/14 20:46:17 by maolivei          #+#    #+#             */
-/*   Updated: 2022/08/27 13:39:39 by maolivei         ###   ########.fr       */
+/*   Updated: 2022/09/04 15:25:13 by maolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@
 
 /* get_next_line related */
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 42		/* Standard buffer size for GNL */
+#  define BUFFER_SIZE 42	/* Standard buffer size for GNL */
 # endif
-# define MAX_FD_VALUE 1024		/* Max file descriptor value supported by GNL */
+# define MAX_FD_VALUE 1024	/* Max file descriptor value supported by GNL */
 
 /* ft_printf related */
 # define HEX_BASE_LOWER "0123456789abcdef"
@@ -65,9 +65,9 @@ typedef struct s_list
 /* The basic structure of a hashtable node */
 typedef struct s_htnode
 {
-	char				*key;
-	char				*value;
-	struct s_htnode		*next;
+	char			*key;
+	char			*value;
+	struct s_htnode	*next;
 }	t_htnode;
 
 /* Hashtable structure */
