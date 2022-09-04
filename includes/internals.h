@@ -6,12 +6,17 @@
 /*   By: maolivei <maolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/14 20:46:17 by maolivei          #+#    #+#             */
-/*   Updated: 2022/09/04 15:25:13 by maolivei         ###   ########.fr       */
+/*   Updated: 2022/09/04 15:26:25 by maolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef INTERNALS_H
 # define INTERNALS_H
+
+/* External libraries */
+# include <stdlib.h>
+# include <unistd.h>
+# include <stdarg.h>
 
 /* Standard file descriptors */
 # define STDIN 0	/* Shortened STDIN file descriptor */

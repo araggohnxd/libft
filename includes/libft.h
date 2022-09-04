@@ -6,16 +6,13 @@
 /*   By: maolivei <maolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 14:43:19 by maolivei          #+#    #+#             */
-/*   Updated: 2022/09/04 15:17:12 by maolivei         ###   ########.fr       */
+/*   Updated: 2022/09/04 15:26:04 by maolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 # include "internals.h"
-# include <stdlib.h>
-# include <unistd.h>
-# include <stdarg.h>
 
 /******************************************************************************/
 /*                                                                            */
