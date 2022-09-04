@@ -6,7 +6,7 @@
 /*   By: maolivei <maolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 14:43:19 by maolivei          #+#    #+#             */
-/*   Updated: 2022/09/04 15:11:15 by maolivei         ###   ########.fr       */
+/*   Updated: 2022/09/04 15:17:12 by maolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -572,7 +572,19 @@ char		*ft_strtrim(char const *s1, char const *set);
 * @param set Set of characters to trim.
 * @return A pointer to the trimmed string or NULL on error.
 */
-char		*ft_strtrim_free(char **s1, char const *set);
+char		*ft_strtrim_free(char *s1, char const *set);
+
+/**
+* @brief Creates a copy of s1 with the characters specified in set
+* removed from the beginning and the end of the string, then
+* free()s s1 and points it to NULL.
+* Memory for the new string is obtained with malloc(),
+* and can be freed with free().
+* @param s1 String to trim from.
+* @param set Set of characters to trim.
+* @return A pointer to the trimmed string or NULL on error.
+*/
+char		*ft_strtrim_free_null(char **s1, char const *set);
 
 /**
 * @brief Creates a substring from the string s.

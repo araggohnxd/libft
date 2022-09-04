@@ -6,7 +6,7 @@
 /*   By: maolivei <maolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 11:52:03 by maolivei          #+#    #+#             */
-/*   Updated: 2022/09/04 14:56:45 by maolivei         ###   ########.fr       */
+/*   Updated: 2022/09/04 15:12:54 by maolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,6 @@ char	*ft_gnl_multifd(int fd, t_bool newline)
 		ft_memfree((void *)&cache[fd]);
 	line = ft_extract_line(buffer, cache[fd]);
 	if (!newline)
-		line = ft_strtrim_free(&line, "\n");
+		line = ft_strtrim_free(line, "\n");
 	return (line);
 }

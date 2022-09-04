@@ -8,8 +8,8 @@ SOURCE_DIRS			:= ctype string stdio stdlib custom non_standard linked_list hash_
 SOURCE_PATH			:= $(addprefix sources/, $(SOURCE_DIRS))
 
 # ctype
-SOURCE_FILES		:= ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c ft_isprint.c
-SOURCE_FILES		+= ft_isspace.c ft_tolower.c ft_toupper.c
+SOURCE_FILES		:= ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c
+SOURCE_FILES		+= ft_isspace.c ft_isprint.c ft_tolower.c ft_toupper.c
 
 # string
 SOURCE_FILES		+= ft_bzero.c ft_memccpy.c ft_memchr.c ft_memcmp.c ft_memcpy.c
@@ -28,7 +28,8 @@ SOURCE_FILES		+= ft_atoi.c ft_atoll.c ft_calloc.c
 SOURCE_FILES		+= ft_gnl.c ft_gnl_multifd.c ft_memfree.c ft_free_matrix.c
 SOURCE_FILES		+= ft_skip_chars.c ft_split.c ft_striteri.c ft_strmapi.c
 SOURCE_FILES		+= ft_strjoin.c ft_strjoin_free.c ft_strjoin_free_null.c
-SOURCE_FILES		+= ft_strtrim.c ft_strtrim_free.c ft_substr.c ft_stredit.c
+SOURCE_FILES		+= ft_strtrim.c ft_strtrim_free.c ft_strtrim_free_null.c
+SOURCE_FILES		+= ft_substr.c ft_stredit.c
 
 # non_standard
 SOURCE_FILES		+= ft_itoa_base.c ft_itoa.c ft_strlcat.c ft_strlcpy.c ft_utoa.c
