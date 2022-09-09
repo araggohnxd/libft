@@ -49,9 +49,13 @@ vpath				%.c $(SOURCE_PATH)
 vpath				%.h $(HEADER_PATH)
 
 CC					:= cc
-CFLAGS				:= -g3 -Wall -Wextra -Werror
+CFLAGS				:= -Wall -Wextra -Werror
 IFLAGS				:= -I $(HEADER_PATH)
 REMOVE				:= rm -rf
+
+ifdef C_DEBUG
+	CFLAGS += -g3
+endif
 
 all:				$(NAME)
 
