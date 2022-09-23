@@ -21,7 +21,6 @@
 /* ft_*printf format specifiers */
 typedef enum e_specifier
 {
-	NONE,
 	PERCENTAGE = '%',
 	HEX_UPPER = 'X',
 	BINARY = 'b' ,
