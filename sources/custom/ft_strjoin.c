@@ -6,13 +6,13 @@
 /*   By: maolivei <maolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/04 12:18:13 by maolivei          #+#    #+#             */
-/*   Updated: 2022/08/15 11:33:03 by maolivei         ###   ########.fr       */
+/*   Updated: 2022/09/22 15:55:54 by maolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(const char *s1, const char *s2)
 {
 	size_t	s1_len;
 	size_t	s2_len;

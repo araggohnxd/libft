@@ -6,7 +6,7 @@
 /*   By: maolivei <maolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 16:16:05 by maolivei          #+#    #+#             */
-/*   Updated: 2022/04/05 16:25:31 by maolivei         ###   ########.fr       */
+/*   Updated: 2022/09/23 00:35:49 by maolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	ft_putnbr_fd(int n, int fd)
 	if (num >= 0)
 	{
 		if (num >= 10)
-			ft_putnbr_fd(num / 10, fd);
-		ft_putchar_fd((num % 10) + '0', fd);
+			ft_putnbr_fd((num / 10), fd);
+		ft_putchar_fd(((num % 10) + '0'), fd);
 	}
 }

@@ -6,13 +6,15 @@
 /*   By: maolivei <maolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 14:43:19 by maolivei          #+#    #+#             */
-/*   Updated: 2022/09/04 15:26:04 by maolivei         ###   ########.fr       */
+/*   Updated: 2022/09/22 20:14:20 by maolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+
 # include "internals.h"
+# include "libftprintf.h"
 
 /******************************************************************************/
 /*                                                                            */
@@ -306,70 +308,6 @@ void		ft_putnbr_fd(int n, int fd);
 */
 void		ft_putstr_fd(char *s, int fd);
 
-/**
-* @brief Print an output to the given file descriptor,
-* according to a format specified as a parameter
-* (accepted specifiers: cspdiuxX%).
-* @param fd File descriptor to write to.
-* @param format Desired output formatting.
-* @param ... Variadic arguments.
-* @return The number of characters printed.
-*/
-int			ft_dprintf(int fd, const char *format, ...);
-
-/**
-* @brief Print an output to the standard output file descriptor (terminal),
-* according to a format specified as a parameter
-* (accepted specifiers: cspdiuxX%).
-* @param format Desired output formatting.
-* @param ... Variadic arguments.
-* @return The number of characters printed.
-*/
-int			ft_printf(const char *format, ...);
-
-/**
-* @brief Handles ft_printf()'s %d and %i specifiers.
-* @param fd File descriptor to write to.
-* @param number Decimal or integer to be printed.
-* @return The number of characters printed.
-*/
-int			ft_handler_integer(int fd, int number);
-
-/**
-* @brief Handles ft_printf()'s %u specifier.
-* @param fd File descriptor to write to.
-* @param number Unsigned number to be printed.
-* @return The number of characters printed.
-*/
-int			ft_handler_unsigned(int fd, t_uint number);
-
-/**
-* @brief Handles ft_printf()'s %x and %X specifiers.
-* @param fd File descriptor to write to.
-* @param specifier Specifier for lowercase or uppercase.
-* @param number Number to be converted to
-* hexadecimal and printed.
-* @return The number of characters printed.
-*/
-int			ft_handler_hex(int fd, char specifier, t_uint number);
-
-/**
-* @brief Handles ft_printf()'s %p specifier.
-* @param fd File descriptor to write to.
-* @param pointer Pointer to have it's
-* address printed.
-* @return The number of characters printed.
-*/
-int			ft_handler_pointer(int fd, void *pointer);
-
-/**
-* @brief Handles ft_printf()'s %s specifier.
-* @param fd File descriptor to write to.
-* @param string String to be printed.
-* @return The number of characters printed.
-*/
-int			ft_handler_string(int fd, char *string);
-
 /******************************************************************************/
 /*                                                                            */
 /*         :::::::: ::::::::::: :::::::::  :::        ::::::::::: :::::::::   */
@@ -485,7 +423,7 @@ void		ft_skip_chars(char *str, int (*f)(int));
 * @param c Character used as delimiter.
 * @return A pointer to the created array of strings or NULL on error.
 */
-char		**ft_split(char const *s, char c);
+char		**ft_split(const char *s, char c);
 
 /**
 * @brief Applies the function f on each character of the string
@@ -512,7 +450,7 @@ void		ft_striteri(char *s, void (*f)(size_t, char*));
 * @return A pointer to the string created from the successive applications
 * of f or NULL on error.
 */
-char		*ft_strmapi(char const *s, char (*f)(size_t, char));
+char		*ft_strmapi(const char *s, char (*f)(size_t, char));
 
 /**
 * @brief Creates a new string, which is the result
@@ -523,7 +461,7 @@ char		*ft_strmapi(char const *s, char (*f)(size_t, char));
 * @param s2 Second string.
 * @return A pointer to the created string or NULL on error.
 */
-char		*ft_strjoin(char const *s1, char const *s2);
+char		*ft_strjoin(const char *s1, const char *s2);
 
 /**
 * @brief Creates a new string, which is the result
@@ -557,7 +495,7 @@ char		*ft_strjoin_free_null(char **s1, char **s2);
 * @param set Set of characters to trim.
 * @return A pointer to the trimmed string or NULL on error.
 */
-char		*ft_strtrim(char const *s1, char const *set);
+char		*ft_strtrim(const char *s1, const char *set);
 
 /**
 * @brief Creates a copy of s1 with the characters specified in set
@@ -569,7 +507,7 @@ char		*ft_strtrim(char const *s1, char const *set);
 * @param set Set of characters to trim.
 * @return A pointer to the trimmed string or NULL on error.
 */
-char		*ft_strtrim_free(char *s1, char const *set);
+char		*ft_strtrim_free(char *s1, const char *set);
 
 /**
 * @brief Creates a copy of s1 with the characters specified in set
@@ -581,7 +519,7 @@ char		*ft_strtrim_free(char *s1, char const *set);
 * @param set Set of characters to trim.
 * @return A pointer to the trimmed string or NULL on error.
 */
-char		*ft_strtrim_free_null(char **s1, char const *set);
+char		*ft_strtrim_free_null(char **s1, const char *set);
 
 /**
 * @brief Creates a substring from the string s.
@@ -593,7 +531,7 @@ char		*ft_strtrim_free_null(char **s1, char const *set);
 * @param len Size of the substring.
 * @return A pointer to the created substring or NULL on error.
 */
-char		*ft_substr(char const *s, size_t start, size_t len);
+char		*ft_substr(const char *s, size_t start, size_t len);
 
 /******************************************************************************/
 /*                                                                            */
@@ -606,6 +544,7 @@ char		*ft_substr(char const *s, size_t start, size_t len);
 /* ###    ####  ########  ###    ####    ########     ###     #########       */
 /*                                                                            */
 /******************************************************************************/
+
 /**
 * @brief Converts the decimal base integer n
 * to a string representation of the given number
@@ -616,7 +555,7 @@ char		*ft_substr(char const *s, size_t start, size_t len);
 * @param base Base to convert to.
 * @return A pointer to the created string containing the number.
 */
-char		*ft_itoa_base(t_ulong n, char *base);
+char		*ft_itoa_base(size_t n, char *base);
 
 /**
 * @brief Converts the integer n

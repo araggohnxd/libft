@@ -1,25 +1,36 @@
 NAME				:= libft.a
 SO					:= $(NAME:.a=.so)
 
-HEADER_PATH			:= includes
-HEADER_FILES		:= libft.h internals.h
+HEADER_PATH			:= ./includes
+HEADER_FILES		:= libft.h internals.h libftprintf.h
 
-SOURCE_DIRS			:= ctype string stdio stdlib custom non_standard linked_list hash_table
-SOURCE_PATH			:= $(addprefix sources/, $(SOURCE_DIRS))
+PRINTF_DIRS			:= core handlers utils
+PRINTF_PATH			:= $(addprefix stdio/ft_printf/, $(PRINTF_DIRS))
+
+PRINTF_FILES		:= core.c ft_printf.c ft_dprintf.c ft_asprintf.c
+PRINTF_FILES		+= ft_snprintf.c ft_sprintf.c handler_percentage.c
+PRINTF_FILES		+= handler_unsigned.c handler_integer.c handler_char.c
+PRINTF_FILES		+= handler_hex_upper.c handler_hex.c handler_pointer.c
+PRINTF_FILES		+= handler_string.c handler_binary.c specifiers.c
+PRINTF_FILES		+= int_utils.c output.c parsers.c
+
+SOURCE_DIRS			:= ctype string stdio stdlib
+SOURCE_DIRS			+= custom non_standard linked_list hash_table
+SOURCE_PATH			:= $(addprefix ./sources/, $(SOURCE_DIRS) $(PRINTF_PATH))
 
 # ctype
 SOURCE_FILES		:= ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c
 SOURCE_FILES		+= ft_isspace.c ft_isprint.c ft_tolower.c ft_toupper.c
 
 # string
-SOURCE_FILES		+= ft_bzero.c ft_memccpy.c ft_memchr.c ft_memcmp.c ft_memcpy.c
-SOURCE_FILES		+= ft_memmove.c ft_mempcpy.c ft_memset.c ft_strchr.c ft_strcmp.c
-SOURCE_FILES		+= ft_strdup.c ft_strlen.c ft_strncmp.c ft_strnlen.c ft_strnstr.c
-SOURCE_FILES		+= ft_strrchr.c
+SOURCE_FILES		+= ft_bzero.c ft_memccpy.c ft_memchr.c ft_memcmp.c
+SOURCE_FILES		+= ft_memmove.c ft_mempcpy.c ft_memset.c ft_strchr.c
+SOURCE_FILES		+= ft_strdup.c ft_strlen.c ft_strncmp.c ft_strnlen.c
+SOURCE_FILES		+= ft_strrchr.c ft_memcpy.c ft_strcmp.c ft_strnstr.c
 
 # stdio
-SOURCE_FILES		+= ft_printf.c ft_dprintf.c ft_printf_handlers.c
-SOURCE_FILES		+= ft_putchar_fd.c ft_putendl_fd.c ft_putnbr_fd.c ft_putstr_fd.c
+SOURCE_FILES		+= ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
+SOURCE_FILES		+= ft_putchar_fd.c
 
 # stdlib
 SOURCE_FILES		+= ft_atoi.c ft_atoll.c ft_calloc.c
@@ -32,18 +43,21 @@ SOURCE_FILES		+= ft_strtrim.c ft_strtrim_free.c ft_strtrim_free_null.c
 SOURCE_FILES		+= ft_substr.c ft_stredit.c
 
 # non_standard
-SOURCE_FILES		+= ft_itoa_base.c ft_itoa.c ft_strlcat.c ft_strlcpy.c ft_utoa.c
+SOURCE_FILES		+= ft_itoa_base.c ft_itoa.c ft_strlcat.c ft_strlcpy.c
+SOURCE_FILES		+= ft_utoa.c
 
 # linked_list
-SOURCE_FILES		+= ft_lstadd_back.c ft_lstadd_front.c ft_lstclear.c ft_lstdelone.c
-SOURCE_FILES		+= ft_lstiter.c ft_lstlast.c ft_lstmap.c ft_lstnew.c ft_lstsize.c
+SOURCE_FILES		+= ft_lstadd_back.c ft_lstadd_front.c ft_lstclear.c
+SOURCE_FILES		+= ft_lstiter.c ft_lstlast.c ft_lstmap.c ft_lstnew.c
+SOURCE_FILES		+= ft_lstdelone.c ft_lstsize.c
 
 # hash_table
-SOURCE_FILES		+= ft_htadd.c ft_htclear.c ft_htdelone.c ft_htfree.c ft_hthasher.c
-SOURCE_FILES		+= ft_htnew.c ft_htsearch.c
+SOURCE_FILES		+= ft_htadd.c ft_htclear.c ft_htdelone.c ft_htfree.c
+SOURCE_FILES		+= ft_htnew.c ft_htsearch.c ft_hthasher.c
 
 OBJECT_PATH			:= objects
 OBJECT_FILES		:= $(SOURCE_FILES:%.c=$(OBJECT_PATH)/%.o)
+OBJECT_FILES		+= $(PRINTF_FILES:%.c=$(OBJECT_PATH)/%.o)
 
 vpath				%.c $(SOURCE_PATH)
 vpath				%.h $(HEADER_PATH)
@@ -60,7 +74,7 @@ endif
 all:				$(NAME)
 
 $(NAME):			$(OBJECT_FILES) $(OBJECT_PATH)
-					ar -rcs $(NAME) $(OBJECT_FILES)
+					ar -rcs $@ $(OBJECT_FILES)
 
 $(OBJECT_PATH)/%.o:	%.c $(HEADER_FILES) Makefile | $(OBJECT_PATH)
 					$(CC) $(CFLAGS) $(IFLAGS) -c $< -o $@

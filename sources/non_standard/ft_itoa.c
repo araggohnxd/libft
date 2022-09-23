@@ -6,7 +6,7 @@
 /*   By: maolivei <maolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 11:29:36 by maolivei          #+#    #+#             */
-/*   Updated: 2022/08/15 11:38:10 by maolivei         ###   ########.fr       */
+/*   Updated: 2022/09/23 00:37:58 by maolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static void	ft_fill_array(long num, char *arr, size_t size)
 	if (num >= 0)
 	{
 		if (num >= 10)
-			ft_fill_array(num / 10, arr, size - 1);
+			ft_fill_array((num / 10), arr, (size - 1));
 		arr[size] = (num % 10) + '0';
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: maolivei <maolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/04 13:08:22 by maolivei          #+#    #+#             */
-/*   Updated: 2022/08/17 11:50:33 by maolivei         ###   ########.fr       */
+/*   Updated: 2022/09/22 15:55:54 by maolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ static size_t	ft_count_words(const char *s, char c)
 	return (words);
 }
 
-char	**ft_split(char const *s, char c)
+char	**ft_split(const char *s, char c)
 {
 	size_t	words;
 	char	**split;
