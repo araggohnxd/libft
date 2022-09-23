@@ -6,7 +6,7 @@
 /*   By: maolivei <maolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 20:09:07 by maolivei          #+#    #+#             */
-/*   Updated: 2022/09/23 02:50:29 by maolivei         ###   ########.fr       */
+/*   Updated: 2022/09/23 03:35:38 by maolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ typedef struct s_output
 * then write it to the standard output file descriptor (terminal).
 * @param format Desired output formatting.
 * @param ... Variadic arguments.
-* @return The amount of characters printed.
+* @return The amount of characters printed, or -1 on error.
 */
 int			ft_printf(const char *format, ...);
 
@@ -75,7 +75,7 @@ int			ft_printf(const char *format, ...);
 * @param fd File descriptor to write to.
 * @param format Desired output formatting.
 * @param ... Variadic arguments.
-* @return The amount of characters printed.
+* @return The amount of characters printed, or -1 on error.
 */
 int			ft_dprintf(int fd, const char *format, ...);
 
@@ -85,7 +85,7 @@ int			ft_dprintf(int fd, const char *format, ...);
 * @param buf Character string to write to.
 * @param format Desired output formatting.
 * @param ... Variadic arguments.
-* @return The amount of characters printed.
+* @return The amount of characters printed, or -1 on error.
 */
 int			ft_sprintf(char *buf, const char *format, ...);
 
@@ -96,7 +96,7 @@ int			ft_sprintf(char *buf, const char *format, ...);
 * @param n Amount of bytes to write.
 * @param format Desired output formatting.
 * @param ... Variadic arguments.
-* @return The amount of characters printed.
+* @return The amount of characters printed, or -1 on error.
 */
 int			ft_snprintf(char *buf, size_t n, const char *format, ...);
 
@@ -108,7 +108,7 @@ int			ft_snprintf(char *buf, size_t n, const char *format, ...);
 * @param str Pointer to where the generated output shall be pointed to.
 * @param format Desired output formatting.
 * @param ... Variadic arguments.
-* @return The amount of characters printed.
+* @return The amount of characters printed, or -1 on error.
 */
 int			ft_asprintf(char **str, const char *format, ...);
 
