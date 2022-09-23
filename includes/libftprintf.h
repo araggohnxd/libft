@@ -6,14 +6,14 @@
 /*   By: maolivei <maolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 20:09:07 by maolivei          #+#    #+#             */
-/*   Updated: 2022/09/23 02:19:57 by maolivei         ###   ########.fr       */
+/*   Updated: 2022/09/23 02:50:29 by maolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFTPRINTF_H
 # define LIBFTPRINTF_H
 
-# include "internals.h"
+# include "ft_internals.h"
 
 # define HEX_BASE "0123456789abcdef"
 # define BINARY_BASE "01"

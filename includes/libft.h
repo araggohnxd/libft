@@ -6,14 +6,14 @@
 /*   By: maolivei <maolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 14:43:19 by maolivei          #+#    #+#             */
-/*   Updated: 2022/09/22 20:14:20 by maolivei         ###   ########.fr       */
+/*   Updated: 2022/09/23 02:50:34 by maolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include "internals.h"
+# include "ft_internals.h"
 # include "libftprintf.h"
 
 /******************************************************************************/

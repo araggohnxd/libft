@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   internals.h                                        :+:      :+:    :+:   */
+/*   ft_internals.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maolivei <maolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/14 20:46:17 by maolivei          #+#    #+#             */
-/*   Updated: 2022/09/23 00:41:27 by maolivei         ###   ########.fr       */
+/*   Updated: 2022/09/23 02:50:04 by maolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef INTERNALS_H
-# define INTERNALS_H
+#ifndef FT_INTERNALS_H
+# define FT_INTERNALS_H
 
 /* External libraries */
 # include <stdlib.h>
@@ -68,4 +68,4 @@ typedef struct s_hashtable
 	t_htnode	*item[HASH_TABLE_SIZE];
 }	t_hashtable;
 
-#endif /* INTERNALS_H */
+#endif /* FT_INTERNALS_H */
