@@ -6,7 +6,7 @@
 /*   By: maolivei <maolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/25 22:09:23 by maolivei          #+#    #+#             */
-/*   Updated: 2022/09/25 22:09:29 by maolivei         ###   ########.fr       */
+/*   Updated: 2022/09/25 22:34:52 by maolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,9 +126,11 @@ void		handle_percentage(t_flags *flags);
 
 /* Output generation */
 
+int			fill_precision(t_flags *flags);
 int			fill_width(t_flags *flags);
 int			fill_int_width(t_flags *flags);
-int			handle_flags_int(t_flags *flags);
+int			handle_zero(t_flags *flags);
+int			handle_flags_integer(t_flags *flags);
 void		prefix_positive(t_flags *flags);
 void		get_str(t_specifier converter, t_flags *flags, va_list ap);
 t_flags		*get_data(const char *str, va_list ap);
