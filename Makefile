@@ -2,7 +2,7 @@ NAME				:= libft.a
 SO					:= $(NAME:.a=.so)
 
 HEADER_PATH			:= ./includes
-HEADER_FILES		:= libft.h ft_internals.h libftprintf.h
+HEADER_FILES		:= libft.h ft_internals.h ft_printf.h
 
 PRINTF_DIRS			:= core handlers utils
 PRINTF_PATH			:= $(addprefix stdio/ft_printf/, $(PRINTF_DIRS))
