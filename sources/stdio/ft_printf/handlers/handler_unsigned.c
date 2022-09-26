@@ -6,7 +6,7 @@
 /*   By: maolivei <maolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/02 18:18:07 by maolivei          #+#    #+#             */
-/*   Updated: 2022/09/23 00:29:47 by maolivei         ###   ########.fr       */
+/*   Updated: 2022/09/25 22:06:54 by maolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ static int	fill_precision(t_flags *flags)
 	if (str_len >= flags->precision)
 		return (str_len);
 	new_str = (char *)malloc(sizeof(char) * (flags->precision + 1));
-	if (new_str)
+	if (!new_str)
 		return (-1);
 	i = 0;
 	new_str[flags->precision] = '\0';
