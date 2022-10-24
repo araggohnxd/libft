@@ -6,7 +6,7 @@
 /*   By: maolivei <maolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 14:43:19 by maolivei          #+#    #+#             */
-/*   Updated: 2022/09/25 22:08:44 by maolivei         ###   ########.fr       */
+/*   Updated: 2022/10/24 10:40:20 by maolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -319,6 +319,13 @@ void		ft_putstr_fd(char *s, int fd);
 /*   ########     ###     #########  ########## ########### #########         */
 /*                                                                            */
 /******************************************************************************/
+
+/**
+* @brief Converts the initial portion of the string pointed to by nptr to float.
+* @param nptr The string to be converted.
+* @return Converted value or 0 on error.
+*/
+double		ft_atof(const char *nptr);
 
 /**
 * @brief Converts the initial portion of the string pointed to by nptr to int.

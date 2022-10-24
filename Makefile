@@ -33,7 +33,7 @@ SOURCE_FILES		+= ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
 SOURCE_FILES		+= ft_putchar_fd.c
 
 # stdlib
-SOURCE_FILES		+= ft_atoi.c ft_atoll.c ft_calloc.c
+SOURCE_FILES		+= ft_atof.c ft_atoi.c ft_atoll.c ft_calloc.c
 
 # custom
 SOURCE_FILES		+= ft_gnl.c ft_gnl_multifd.c ft_memfree.c ft_free_matrix.c
