@@ -67,7 +67,7 @@ CFLAGS				:= -Wall -Wextra -Werror
 IFLAGS				:= -I $(HEADER_PATH)
 REMOVE				:= rm -rf
 
-ifdef C_DEBUG
+ifdef DEBUG
 	CFLAGS += -g3
 endif
 
