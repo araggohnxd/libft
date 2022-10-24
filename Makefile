@@ -76,6 +76,11 @@ all:				$(NAME)
 $(NAME):			$(OBJECT_FILES) $(OBJECT_PATH)
 					ar -rcs $@ $(OBJECT_FILES)
 
+so:					$(SO)
+
+$(SO):				$(OBJECT_FILES) $(OBJECT_PATH)
+					$(CC) $(CFLAGS) -nostartfiles -shared -o $@ $(OBJECT_FILES)
+
 $(OBJECT_PATH)/%.o:	%.c $(HEADER_FILES) Makefile | $(OBJECT_PATH)
 					$(CC) $(CFLAGS) $(IFLAGS) -c $< -o $@
 
@@ -89,8 +94,5 @@ fclean:				clean
 					$(REMOVE) $(NAME) $(SO)
 
 re:					fclean all
-
-so:					all
-					gcc -nostartfiles -shared -o $(SO) $(OBJECT_FILES)
 
 .PHONY:				all clean fclean re so
