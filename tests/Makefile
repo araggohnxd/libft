@@ -44,6 +44,9 @@ $(OBJECT_PATH)/%.o:	%.c $(HEADER_FILES) Makefile | $(OBJECT_PATH)
 $(OBJECT_PATH):
 					mkdir -p $@
 
+$(LIBFT):
+					make -C $(LIBFT_PATH) DEBUG=1
+
 clean:
 					$(REMOVE) $(OBJECT_PATH)
 
