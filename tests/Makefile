@@ -7,7 +7,7 @@ UNITY_PATH			:= ./unity
 UNITY				:= unity.c
 
 SOURCE_PATH			:= ./sources ./unity
-SOURCE_FILES		:= $(shell ls ./sources ./unity | grep .c$)
+SOURCE_FILES		:= $(shell ls $(SOURCE_PATH) | grep .c$)
 
 OBJECT_PATH			:= ./objects
 OBJECT_FILES		:= $(SOURCE_FILES:%.c=$(OBJECT_PATH)/%.o)
