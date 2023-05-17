@@ -6,7 +6,7 @@
 /*   By: maolivei <maolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 14:43:19 by maolivei          #+#    #+#             */
-/*   Updated: 2022/11/04 10:56:40 by maolivei         ###   ########.fr       */
+/*   Updated: 2023/04/25 13:45:27 by maolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -214,6 +214,17 @@ int			ft_strcmp(const char *s1, const char *s2);
 * @return A pointer to the new string or NULL on error.
 */
 char		*ft_strdup(const char *s);
+
+/**
+* @brief Returns a pointer to a new string which is a copy of at most
+* n bytes of string s.
+* Memory for the new string is obtained with malloc(),
+* and can be freed with free().
+* @param s String to duplicate.
+* @param n Amount of bytes to copy.
+* @return A pointer to the new string or NULL on error.
+*/
+char		*ft_strndup(const char *s, size_t n);
 
 /**
 * @brief Calculates the length of the string pointed to by s,

@@ -6,7 +6,7 @@
 /*   By: maolivei <maolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/03 21:35:26 by maolivei          #+#    #+#             */
-/*   Updated: 2022/09/22 15:35:47 by maolivei         ###   ########.fr       */
+/*   Updated: 2023/04/24 19:48:56 by maolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	const unsigned char	*us1 = (unsigned char *)s1;
-	const unsigned char	*us2 = (unsigned char *)s2;
+	const unsigned char	*us1 = s1;
+	const unsigned char	*us2 = s2;
 
 	while (n--)
 		if (*us1++ != *us2++)

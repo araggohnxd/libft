@@ -6,7 +6,7 @@
 /*   By: maolivei <maolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 00:50:22 by maolivei          #+#    #+#             */
-/*   Updated: 2022/09/22 15:35:47 by maolivei         ###   ########.fr       */
+/*   Updated: 2023/04/25 13:30:27 by maolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,11 @@
 
 int	ft_strcmp(const char *s1, const char *s2)
 {
-	while (*s1 || *s2)
-		if (*(unsigned char *)s1++ != *(unsigned char *)s2++)
-			return (*(unsigned char *)(s1 - 1) - *(unsigned char *)(s2 - 1));
+	const unsigned char	*us1 = (unsigned char *)s1;
+	const unsigned char	*us2 = (unsigned char *)s2;
+
+	while (*us1 || *us2)
+		if (*us1++ != *us2++)
+			return (*(us1 - 1) - *(us2 - 1));
 	return (0);
 }

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: maolivei <maolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/01 18:12:06 by maolivei          #+#    #+#             */
-/*   Updated: 2022/09/22 15:35:47 by maolivei         ###   ########.fr       */
+/*   Created: 2023/04/24 19:31:54 by maolivei          #+#    #+#             */
+/*   Updated: 2023/04/25 13:33:11 by maolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	size_t	length;
+	const unsigned char	*us = (unsigned char *)s;
+	const unsigned char	uc = (unsigned char)c;
+	unsigned char		*match;
 
-	length = ft_strlen(s);
-	while (length)
-		if (*(s + length--) == (unsigned char)c)
-			return ((char *)(s + (length + 1)));
-	if (*(s + length--) == (unsigned char)c)
-		return ((char *)(s + (length + 1)));
-	return (NULL);
+	match = NULL;
+	while (*us)
+		if (*us++ == uc)
+			match = (unsigned char *)us - 1;
+	return ((char *)match);
 }
